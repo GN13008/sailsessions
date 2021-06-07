@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_142501) do
     t.date "start_date"
     t.date "end_date"
     t.string "title"
+    t.text "description"
     t.integer "nb_of_place"
     t.string "sport"
     t.string "exchange_item"

@@ -6,6 +6,7 @@ class CreateSessions < ActiveRecord::Migration[6.0]
       t.date :start_date
       t.date :end_date
       t.string :title
+      t.text :description
       t.integer :nb_of_place
       t.string :sport
       t.string :exchange_item
