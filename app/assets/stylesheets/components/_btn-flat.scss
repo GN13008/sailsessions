@@ -1,0 +1,20 @@
+@import "color";
+
+.btn-flat {
+    color: $text-color;
+    padding: 8px 24px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .background-accent-color {
+    background-color: $accent-color;
+}
+
+.background-primary-color {
+    background-color: $primary-color;
+}
+
+.background-secondary-color {
+    background-color: $secondary-color;
+}
