@@ -8,4 +8,4 @@
 
 user1 = User.create!(email: "pierreaveorus@gmail.com", password: "password")
 
-session1 = Session.create!(title: "toto", user_id: 1)
+session1 = Session.create!(title: "toto", user_id: 1, from: "marseille", spot: "brutal", sport: "surf", start_date: "19/12/1996", end_date: "21/12/1996" )
