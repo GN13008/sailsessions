@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RideTest < ActiveSupport::TestCase
+class SportTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
