@@ -33,13 +33,25 @@ flo = User.create!(email: "flo@gmail.com", password: "password")
 pierre = User.create!(email: "pierre@gmail.com", password: "password")
 
 puts "Users are create"
-puts "Creating 1 ride"
+puts "Creating 3 ride"
 
-ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_date: "19/05/2021", end_date: "19/05/2021" )
+ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_date: "19/06/2021", end_date: "19/06/2021" )
 ride1.user = gui
 ride1.sport = kite
 ride1.save
 puts "#{ride1.title} is create" 
+
+ride2 = Ride.new(title: "Session afterwork", from: "Marseille", spot: "six-four", start_date: "16/06/2021", end_date: "16/06/2021" )
+ride2.user = pierre
+ride2.sport = surf
+ride2.save
+puts "#{ride2.title} is create" 
+
+ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_date: "17/06/2021", end_date: "17/06/2021" )
+ride3.user = pierre
+ride3.sport = sup
+ride3.save
+puts "#{ride3.title} is create" 
 
 puts "Sessions are create"
 

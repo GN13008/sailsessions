@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [ :index ]
 
-  get "/rides/search", to: "rides#search", as: :search
+  get "/search", to: "rides#search", as: :search
   patch "/rides/:id", to: "rides#cancel", as: :cancel_ride
 
   patch "/bookings/:id", to: "bookings#accept", as: :accept_booking
