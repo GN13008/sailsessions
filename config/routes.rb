@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :index ]
 
   get "/sessions/search", to: "sessions#search", as: :search
-  get "/sessions/:id", to: "sessions#cancel", as: :cancel_session
+  patch "/sessions/:id", to: "sessions#cancel", as: :cancel_session
 
-  get "/bookings/:id", to: "bookings#accept", as: :accept_booking
-  get "/bookings/:id", to: "bookings#decline", as: :decline_booking
+  patch "/bookings/:id", to: "bookings#accept", as: :accept_booking
+  patch "/bookings/:id", to: "bookings#decline", as: :decline_booking
 end
