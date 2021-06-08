@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   end
 
   def new
-    @session = Session.new 
+    @session = Session.new
   end
 
   def create
@@ -16,16 +16,8 @@ class SessionsController < ApplicationController
       redirect_to @session
     else
       render :new
-    end 
+    end
   end
-
-  def accept
-
-  end 
-
-  def decline
-
-  end 
 
   private
 
@@ -33,5 +25,5 @@ class SessionsController < ApplicationController
     params.require(:session).permit(:from, :spot, :start_date, :end_date, :title, :description, :nb_of_place, :sport, :exchange_item)
   end
 
-  
+
 end
