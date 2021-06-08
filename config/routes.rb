@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   patch "/bookings/:id", to: "bookings#accept", as: :accept_booking
   patch "/bookings/:id", to: "bookings#decline", as: :decline_booking
+
+  get "/components", to: "pages#components", as: :components
 end
