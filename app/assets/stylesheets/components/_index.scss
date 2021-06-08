@@ -6,9 +6,15 @@
 @import "color";
 @import "text";
 @import "profile-pic";
+@import "card-session";
+@import "card-mes-session";
+@import "body";
 
 * {
     padding: 0;
     margin: 0;
+}
+p {
+    margin-bottom: 0;
 }
 
