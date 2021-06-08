@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_142501) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "demand"
     t.bigint "session_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
