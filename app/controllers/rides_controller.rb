@@ -4,6 +4,23 @@ class RidesController < ApplicationController
 
   def search
     @rides = Ride.all
+    if params[:sport].present? # && params[:when].present?
+      @rides = Ride.search_by_sport(params[:sport])
+    #   @offers = Offer.search_by_localisation(params[:where])
+    #   @offers = @offers.search_by_disponibility(params[:when])
+    # elsif params[:when].present?
+    #   @offers = Offer.search_by_disponibility(params[:when])
+    # elsif params[:where].present?
+    #   @offers = Offer.search_by_localisation(params[:where])
+    # else
+    #   @offers = Offer.all
+    # end
+    # @markers = @offers.geocoded.map do |offer|
+    # {
+    #   lat: offer.latitude,
+    #   lng: offer.longitude
+    # }
+    end
   end
 
   def show

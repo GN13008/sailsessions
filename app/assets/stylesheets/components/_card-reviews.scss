@@ -1,0 +1,20 @@
+.card-reviews {
+  background-color: $secondary-color;
+  padding: 25px;
+  border-radius: 8px;
+  margin: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  .padding-text{
+    color: $text-color;
+    padding-top: 5px;
+  }
+
+  .card-top{
+    justify-content: start;
+    display: flex;
+
+  }
+  .padding-h1{
+    padding-left: 40px;
+  }
+}
