@@ -2,17 +2,16 @@
   <div class="coming-soon">
     <h1>SailSessions</h1>
     <p>coming soon</p>
-    <div class="search-form-control form-group">
-      <%= simple_form_for(@sport) do |f| %>
-        <%# <%= f.input :title %> %>
-        <%# <%= f.input :disponibility, collection: ["Weekend", "Week", "Afterwork", "Every Day"] %> %>
-        <%# <%= f.input :description %> %>
-        <%# <%= f.input :localisation %> %>
-        <%# <%= f.input :price, label: 'Price/d'%> %>
-        <%# <%= f.submit class:"btn-flat", id:"update-btn"%> %>
-      <% end %>
+    <div class="container">
+      <div class="search-form-control form-group form-inline">
+        <%= form_with url: "/search", method: :get, local: true do |form| %>
+          <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control" %>
+          <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control" %>
+          <%= form.date_field :date, placeholder: "Quand ?", class: "form-control" %>
+          <%= form.submit "Trouve ta session", class: "btn btn-flat background-accent-color" %>
+        <% end %>
+      </div>
     </div>
-    <%= link_to "Trouve ta session", search_path, class: "btn btn-flat background-accent-color" %>
   </div>
 </div>
 <h1>Ta session par sport</h1>

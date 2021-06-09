@@ -1,4 +1,14 @@
 <div class="banner-search">
+  <div class="container">
+    <div class="search-form-control form-group form-inline">
+      <%= form_with url: "/search", method: :get, local: true do |form| %>
+        <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control" %>
+        <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control" %>
+        <%= form.date_field :date, placeholder: "Quand ?", class: "form-control" %>
+        <%= form.submit "Trouve ta session", class: "btn btn-flat background-accent-color" %>
+      <% end %>
+    </div>
+  </div>
   <h1>This is all the result for SURF - XX sessions available</h1>
 </div>
 <% @rides.each do |ride| %>
