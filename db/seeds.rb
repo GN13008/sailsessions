@@ -24,13 +24,13 @@ wake = Sport.create!(name: "Wakeboard", description: "Pense a préciser la taill
 puts "Sports creation finished"
 puts "Creating 4 users"
 
-gui = User.create!(email: "gui@gmail.com", password: "password")
+gui = User.create!(email: "gui@gmail.com", password: "password", bio: "le maitre du back" , name: "Guillaume Negro", age: "25ans")
 # guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622628942/pk5n4dap7dnsoeed7f3izmfny1jk.png")
 # gui.photo.attach(io: guiimage, filename: 'v1622628942pk5n4dap7dnsoeed7f3izmfny1jk.png')
 
-ibra = User.create!(email: "ibra@gmail.com", password: "password")
-flo = User.create!(email: "flo@gmail.com", password: "password")
-pierre = User.create!(email: "pierre@gmail.com", password: "password")
+ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "le maitre du design" , name: "Ibrahim", age: "25ans")
+flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "le maitre du front la navbar magique" , name: "Florent", age: "25ans")
+pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "le maitre du café" , name: "Pierre", age: "25ans")
 
 puts "Users are created"
 puts "Creating 3 rides"
