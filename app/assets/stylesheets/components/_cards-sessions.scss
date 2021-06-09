@@ -5,9 +5,14 @@
     padding: 16px;
     border-radius: 8px;
     margin: 8px;
+    box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;
 
     .right {
         text-align: right;
+    }
+
+    .margin-top {
+        margin-top: 5px;
     }
 }
 
@@ -15,6 +20,7 @@
 .card-mes-session {
     background-color: $secondary-color;
     padding: 16px;
+    box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;
     border-radius: 8px;
     margin: 8px;
     position: relative;
@@ -23,20 +29,27 @@
     .top-card-mes-session {
         display: flex;
         justify-content: space-between;
+        .titre-margin-top {
+            margin-top: 15px;
+        }
     }
 
     .right-flex {
         display: flex;
         align-items: flex-end;
+        .margin {
+            margin: 0 2px;
+        }
     }
 
     .card-middle{
         margin-bottom: 10px;
+        padding: 0 5px;
     }
 
     .bar-white {
         height: 2px;
-        width: 90%;
+        width: 98%;
         background-color: white;
         margin: 15px auto;
         border-radius: 2px;

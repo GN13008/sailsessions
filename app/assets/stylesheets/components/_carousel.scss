@@ -1,0 +1,26 @@
+.carousel-items {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+    flex: 1 0 250px;
+    margin-left: 1rem;
+    scroll-snap-align: start;
+}
+
+.carousel-items::-webkit-scrollbar-track {
+    background-color: $primary-color;
+}
+
+.carousel-items::-webkit-scrollbar {
+    height: 6px;
+    background-color: $primary-color;
+}
+
+.carousel-items::-webkit-scrollbar-thumb {
+    background-color: $secondary-color;
+    border-radius: 15px;
+}
