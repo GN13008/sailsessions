@@ -6,7 +6,7 @@ class CreateRides < ActiveRecord::Migration[6.0]
       t.date :start_date
       t.date :end_date
       t.string :title
-      t.text :description
+      t.text :description, default: "Cette session n'a pas de description. Veuillez contacter l'organisateur pour plus d'informations!"
       t.integer :nb_of_place
       t.string :exchange_item
       t.string :sport

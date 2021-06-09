@@ -1,1 +1,15 @@
-<h1> this is blue</h1>
+<div class="container">
+    <h1>Create your session</h1>
+    <%= simple_form_for(@ride) do |f| %>
+        <%= f.input :sport_id, label: 'Sport :' %>
+        <%= f.input :title, label: 'Titre :' %>
+        <%= f.input :from, label: 'Lieux de départ :' %>
+        <%= f.input :spot, label: 'Lieux du spot :' %>
+        <%= f.input :nb_of_place, label: 'Nb place :' %>
+        <%= f.input :start_date, label: 'Début :' %>
+        <%= f.input :end_date, label: 'Fin :' %>
+        <%= f.input :exchange_item, label: 'Object à échanger :' %>
+        <%= f.input :description, label: 'Description :' %>
+        <%= f.submit class:"btn-flat", class:"btn btn-flat background-accent-color" %>
+    <% end %>
+</div>

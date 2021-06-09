@@ -32,28 +32,28 @@ ibra = User.create!(email: "ibra@gmail.com", password: "password")
 flo = User.create!(email: "flo@gmail.com", password: "password")
 pierre = User.create!(email: "pierre@gmail.com", password: "password")
 
-puts "Users are create"
-puts "Creating 3 ride"
+puts "Users are created"
+puts "Creating 3 rides"
 
-ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_date: "19/06/2021", end_date: "19/06/2021" )
+ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_date: "10:00", end_date: "18:00", date: "19/06/2021" )
 ride1.user = gui
 ride1.sport = kite
 ride1.save
-puts "#{ride1.title} is create" 
+puts "#{ride1.title} is created"
 
-ride2 = Ride.new(title: "Session afterwork", from: "Marseille", spot: "six-four", start_date: "16/06/2021", end_date: "16/06/2021" )
+ride2 = Ride.new(title: "Session afterwork", from: "Marseille", spot: "six-four", start_date: "9:00", end_date: "17:00", date: "16/06/2021" )
 ride2.user = pierre
 ride2.sport = surf
 ride2.save
-puts "#{ride2.title} is create" 
+puts "#{ride2.title} is created"
 
-ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_date: "17/06/2021", end_date: "17/06/2021" )
+ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_date: "11:00", end_date: "20:00", date: "17/06/2021" )
 ride3.user = pierre
 ride3.sport = sup
 ride3.save
-puts "#{ride3.title} is create" 
+puts "#{ride3.title} is created"
 
-puts "Sessions are create"
+puts "Sessions are created"
 
 
 

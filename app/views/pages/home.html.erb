@@ -1,8 +1,19 @@
 <div class="home-banner">
   <div class="coming-soon">
     <h1>SailSessions</h1>
-    <p>coming soon</p>
-    <%= link_to "Trouve ta session", search_path, class: "btn btn-flat background-accent-color" %>
+    <p>CHOISIS UN SPORT</p>
+    <p>TROUVE TA COMMUNAUTÉ</p>
+    <p>PARTAGEZ VOTRE PASSION ENSEMBLE</p>
+    <div class="container">
+      <div class="search-form-control form-group form-inline">
+        <%= form_with url: "/search", method: :get, local: true do |form| %>
+          <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control" %>
+          <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control" %>
+          <%= form.date_field :date, placeholder: "Quand ?", class: "form-control" %>
+          <%= form.submit "Trouve ta session", class: "btn btn-flat background-accent-color" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 <h1>Ta session par sport</h1>

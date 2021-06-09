@@ -1,1 +1,33 @@
-<h1>this is blue</h1>
+<h1><%= ride.title %></h1>
+<hr>
+<div class="container">
+  <div class="d-flex">
+    <!-- score cards  -->
+    <div class="d-flex flex-column">
+      <div class="score-card-session">
+      <h3>Date</h3>
+      <h3><%= @ride.date %></h3>
+    </div>
+      <div class="score-card-session">
+        <h3>Début</h3>
+        <h3><%= @ride.start_date %></h3>
+      </div>
+      <div class="score-card-session">
+        <h3>Fin</h3>
+        <h3><%= @ride.end_date %></h3>
+      </div>
+    </div>
+
+    <!-- Informations complémentaires sur la session -->
+    <div>
+      <h3><%= @ride.spot %></h3>
+    </div>
+
+    <!-- Description de la session -->
+    <div>
+      <h2>Découvre cette session</h2>
+      <hr>
+      <p><%= @ride.description %></p>
+    </div>
+  </div>
+</div>
