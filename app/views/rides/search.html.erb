@@ -1,0 +1,7 @@
+<h1>This is search</h1>
+<% @rides.each do |ride| %>
+  <p>title : <%= ride.title %></p>
+  <p>user : <%= ride.user.email %></p>
+  <p>nb place : <%= ride.nb_of_place %></p>
+  <p>spot : <%= ride.spot %></p>
+<% end %>

@@ -2,6 +2,10 @@ class RidesController < ApplicationController
   def index
   end
 
+  def search
+    @rides = Ride.all
+  end
+
   def show
     @ride = Ride.find(params[:id])
   end
