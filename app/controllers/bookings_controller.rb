@@ -8,14 +8,13 @@ class BookingsController < ApplicationController
     @ride = Ride.find(params[:ride_id])
     @booking = Booking.new(booking_params)
     @booking.ride = @ride
-    # liaison des deux
-    # besoin de ID user + ID ride
-    # devise current_user ?
-    current_user.user_id
+    @booking.user = current_user
+
     if @booking.save
-      redirect_to @booking
+      redirect_to @ride
     else
       render @ride
+      # Flash alert to be made
     end
   end
 
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to @booking.ride
     else
-      render
+      render @ride
     end
   end
 
@@ -39,7 +38,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to @booking.ride
     else
-      render
+      render @ride
     end
   end
 
