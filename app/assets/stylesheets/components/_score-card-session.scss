@@ -1,0 +1,14 @@
+.score-card-session{
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:solid 1px;
+  border-color: $secondary-color;
+  border-radius: 16px;
+  width: 30%;padding-top: 10px;
+  .color-depart{
+    color: $accent-color
+  }
+}
