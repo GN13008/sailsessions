@@ -1,6 +1,40 @@
-<div class="welcome">
+<div class="home-banner">
   <div class="coming-soon">
     <h1>SailSessions</h1>
     <p>coming soon</p>
+    <%= link_to "Trouve ta session", search_path, class: "btn btn-flat background-accent-color" %>
+  </div>
+</div>
+<h1>Ta session par sport</h1>
+<div class="sports-cards">
+  <% @sports.each do |sport| %>
+    <div class="card-sport-home">
+      <h1><%= sport.name %></h1>
+    </div>
+  <% end %>
+</div>
+<h1>Top session</h1>
+<div class="cards-sessions">
+  <div class="card-session">
+    <div class="card-session-colum">
+        <h3>Titre</h3>
+        <p>place number</p>
+        <p>localisation</p>
+    </div>
+    <div class="card-session-colum  right">
+        <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+        <p>14h/22/03</p>
+    </div>
+  </div>
+  <div class="card-session">
+    <div class="card-session-colum">
+        <h3>Titre</h3>
+        <p>place number</p>
+        <p>localisation</p>
+    </div>
+    <div class="card-session-colum  right">
+        <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+        <p>14h/22/03</p>
+    </div>
   </div>
 </div>
