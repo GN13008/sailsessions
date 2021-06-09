@@ -39,8 +39,9 @@ class RidesController < ApplicationController
     @ride = Ride.new(ride_params)
     @ride.user = current_user
     if @ride.save
-      redirect_to @ride
+      redirect_to @ride, notice: "Session confirmé"
     else
+      flash.alert = "Merci de remplir le formulaire ci-joint"
       render :new
     end
   end
