@@ -1,6 +1,6 @@
-class CreateSessions < ActiveRecord::Migration[6.0]
+class CreateRides < ActiveRecord::Migration[6.0]
   def change
-    create_table :sessions do |t|
+    create_table :rides do |t|
       t.string :from
       t.string :spot
       t.date :start_date
@@ -8,8 +8,8 @@ class CreateSessions < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :description
       t.integer :nb_of_place
-      t.string :sport
       t.string :exchange_item
+      t.string :sport
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
