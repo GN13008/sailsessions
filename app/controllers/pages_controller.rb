@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @sports = Sport.all
-    @sport = Sport.new
+    @rides = Ride.all.last(2)
   end
 
   def components

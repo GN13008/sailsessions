@@ -33,6 +33,7 @@ class RidesController < ApplicationController
 
   def create
     @ride = Ride.new(ride_params)
+    @ride.user = current_user
     if @ride.save
       redirect_to @ride
     else
@@ -43,7 +44,7 @@ class RidesController < ApplicationController
   private
 
   def ride_params
-    params.require(:ride).permit(:from, :spot, :start_time, :end_time, :title, :description, :nb_of_place, :sport, :exchange_item, :date)
+    params.require(:ride).permit(:from, :spot, :start_time, :end_time, :title, :description, :nb_of_place, :sport, :exchange_item, :date, :sport_id)
   end
 
 end

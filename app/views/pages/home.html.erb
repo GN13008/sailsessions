@@ -26,26 +26,19 @@
 </div>
 <h1>Top session</h1>
 <div class="cards-sessions">
-  <div class="card-session">
-    <div class="card-session-colum">
-        <h3>Titre</h3>
-        <p>place number</p>
-        <p>localisation</p>
-    </div>
-    <div class="card-session-colum  right">
-        <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-        <p>14h/22/03</p>
-    </div>
-  </div>
-  <div class="card-session">
-    <div class="card-session-colum">
-        <h3>Titre</h3>
-        <p>place number</p>
-        <p>localisation</p>
-    </div>
-    <div class="card-session-colum  right">
-        <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-        <p>14h/22/03</p>
-    </div>
-  </div>
+  <% @rides.each do |ride| %>
+    <%= link_to ride_path(ride) do %>
+      <div class="card-session">
+        <div class="card-session-colum">
+            <h3><%= ride.title %></h3>
+            <p><%= ride.nb_of_place %></p>
+            <p><%= ride.spot %></p>
+        </div>
+        <div class="card-session-colum  right">
+            <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+            <p><%= ride.date %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
