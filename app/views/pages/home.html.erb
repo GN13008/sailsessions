@@ -2,6 +2,16 @@
   <div class="coming-soon">
     <h1>SailSessions</h1>
     <p>coming soon</p>
+    <div class="search-form-control form-group">
+      <%= simple_form_for(@sport) do |f| %>
+        <%# <%= f.input :title %> %>
+        <%# <%= f.input :disponibility, collection: ["Weekend", "Week", "Afterwork", "Every Day"] %> %>
+        <%# <%= f.input :description %> %>
+        <%# <%= f.input :localisation %> %>
+        <%# <%= f.input :price, label: 'Price/d'%> %>
+        <%# <%= f.submit class:"btn-flat", id:"update-btn"%> %>
+      <% end %>
+    </div>
     <%= link_to "Trouve ta session", search_path, class: "btn btn-flat background-accent-color" %>
   </div>
 </div>
