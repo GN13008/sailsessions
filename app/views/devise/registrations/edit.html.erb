@@ -5,8 +5,8 @@
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-profil-user"%>
     </div>
     <div >
-      <h1>current_user.name</h1>
-      <h2>current_user.age</h2>
+      <h1><%=current_user.name%></h1>
+      <h2><%=current_user.age%></h2>
       <div class="social-mt-5">
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -20,6 +20,9 @@
   </div>  
 
   <hr class=hr-color>
+  <div>
+
+  </div>
 
 <div class="container">
 
@@ -34,6 +37,18 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
+      <%= f.input :name,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-name" } %>
+      <%= f.input :age,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-age" } %> 
+      <%= f.input :bio,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-bio" } %>                       
 
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
