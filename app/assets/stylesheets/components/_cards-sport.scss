@@ -1,6 +1,8 @@
-
 .card-sport{
   width: 100px;
+  
+}
+.card-sport-image{
   height: 100px;
   background-image:  linear-gradient(120deg, rgba(20,20,20,0.8), rgba(20,20,20,0.2)), url("https://wallpapercave.com/wp/wp5555815.jpg");
   background-size: cover;
@@ -14,6 +16,9 @@
   align-items: end;
   flex-direction: column;
   font-weight: 700;
+  .padding-10{
+    padding: 10px;
+  }
   
 }
 .card-sport-home{
