@@ -1,33 +1,89 @@
-<h1><%= ride.title %></h1>
-<hr>
+
 <div class="container">
+  <h1 class="text-center pt-3"><%= @ride.title %></h1>
+<hr>
   <div class="d-flex">
-    <!-- score cards  -->
-    <div class="d-flex flex-column">
+    <!-- Score cards container  -->
+    <div class="d-flex flex-column" id="score-card-container">
       <div class="score-card-session">
-      <h3>Date</h3>
-      <h3><%= @ride.date %></h3>
-    </div>
+        <h3>Date</h3>
+        <h3 class="color-depart"><%= @ride.date %></h3>
+      </div>
       <div class="score-card-session">
         <h3>Début</h3>
-        <h3><%= @ride.start_time %></h3>
+        <h3 class="color-depart"><%= @ride.start_time %></h3>
       </div>
       <div class="score-card-session">
         <h3>Fin</h3>
-        <h3><%= @ride.end_time %></h3>
+        <h3 class="color-depart"><%= @ride.end_time %></h3>
       </div>
     </div>
 
     <!-- Informations complémentaires sur la session -->
+    <div class="flex-fill">
+      <h3 class=""><%= @ride.spot %></h3>
     <div>
-      <h3><%= @ride.spot %></h3>
-    </div>
-
-    <!-- Description de la session -->
-    <div>
-      <h2>Découvre cette session</h2>
-      <hr>
-      <p><%= @ride.description %></p>
+        <p></p>
+      </div>
     </div>
   </div>
+  <hr>
+      <!-- Description de la session -->
+  <div>
+    <h2>Découvre cette session</h2>
+    <p><%= @ride.description %></p>
+    <hr>
+  </div>
+  <!-- Objets d'échange entre sessionners -->
+  <div>
+    <h2>Choisis ce que tu apportes</h2>
+    <p>Si cette session t'intéresses, alors il ne te reste pus qu'à choisir ce que tu souhaites apporter en échange du covoiturage. N'hésites pas à en discuter avec l'hôte pour trouver un compromis. </p>
+  <!-- Dropdown button -->
+    <div class="dropdown" id="echange-selector">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-echange" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Fais ton choix!
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item" type="button">J’apporte les bières!</button>
+        <button class="dropdown-item" type="button">J’apporte le pique nique!</button>
+        <button class="dropdown-item" type="button">Je propose à l’hôte quelquechose</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- Reviews Section -->
+  <div class="card-reviews">
+    <div class="card-top">
+      <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
+      <div class="padding-h1">
+        <h2>Kelly Slater</h2>
+        <h3>Mars 2021</h3>
+      </div>
+    </div>
+      <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
+  </div>
+
+<div class="card-reviews">
+    <div class="card-top">
+      <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
+      <div class="padding-h1">
+        <h2>Kelly Slater</h2>
+        <h3>Mars 2021</h3>
+      </div>
+    </div>
+      <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
+  </div>
+
+  <div class="card-reviews">
+    <div class="card-top">
+      <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
+      <div class="padding-h1">
+        <h2>Kelly Slater</h2>
+        <h3>Mars 2021</h3>
+      </div>
+    </div>
+      <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
+  </div>
+
+  <a class="btn btn-flat background-accent-color margin-top big-btn" href="#">Réserver</a>
 </div>

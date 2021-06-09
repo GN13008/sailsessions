@@ -1,3 +1,7 @@
+#score-card-container {
+  width: 33%;
+}
+
 .score-card-session{
   background-color: $primary-color;
   display: flex;
@@ -7,8 +11,10 @@
   border:solid 1px;
   border-color: $secondary-color;
   border-radius: 16px;
-  width: 30%;padding-top: 10px;
+  // width: 30%;
+  padding-top: 10px;
+  margin : 5px;
   .color-depart{
-    color: $accent-color
+    color: #E5863A;
   }
 }
