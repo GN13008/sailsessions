@@ -8,13 +8,21 @@
   </div>
 </div>
 <h1>Ta session par sport</h1>
-<div class="sports-cards">
-  <% @sports.each do |sport| %>
-    <div class="card-sport-home">
-      <h1><%= sport.name %></h1>
-    </div>
-  <% end %>
-</div>
+
+
+  <section class="carousel">
+      <ul class="carousel-items">
+          <% @sports.each do |sport| %>
+            <div class="card-sport-home">
+                <h1><%= sport.name %></h1>
+              <li class="carousel-item"></li>
+            </div>
+          <% end %>
+      </ul>
+  </section>
+
+
+
 <h1>Top session</h1>
 <div class="cards-sessions">
   <div class="card-session">
