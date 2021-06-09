@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_143421) do
+ActiveRecord::Schema.define(version: 2021_06_09_134555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,14 @@ ActiveRecord::Schema.define(version: 2021_06_08_143421) do
     t.date "start_date"
     t.date "end_date"
     t.string "title"
-    t.text "description"
+    t.text "description", default: "Cette session n'a pas de description. Veuillez contacter l'organisateur pour plus d'informations!"
     t.integer "nb_of_place"
     t.string "exchange_item"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "sport_id"
+    t.string "date"
     t.index ["sport_id"], name: "index_rides_on_sport_id"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end

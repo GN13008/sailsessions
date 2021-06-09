@@ -46,7 +46,7 @@ ride2.user = pierre
 ride2.sport = surf
 ride2.save
 puts "#{ride2.title} is created"
-d
+
 ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_date: "11:00", end_date: "20:00", date: "17/06/2021" )
 ride3.user = pierre
 ride3.sport = sup
