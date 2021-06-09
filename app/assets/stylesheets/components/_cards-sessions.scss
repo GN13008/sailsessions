@@ -1,0 +1,56 @@
+.card-session {
+    display: flex;
+    justify-content: space-between;
+    background-color: $secondary-color;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 8px;
+
+    .right {
+        text-align: right;
+    }
+}
+
+// grande card de notification
+.card-mes-session {
+    background-color: $secondary-color;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 8px;
+    position: relative;
+    margin-bottom: 40px;
+
+    .top-card-mes-session {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .right-flex {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .card-middle{
+        margin-bottom: 10px;
+    }
+
+    .bar-white {
+        height: 2px;
+        width: 90%;
+        background-color: white;
+        margin: 15px auto;
+        border-radius: 2px;
+    }
+
+    .btn-inline{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .card-btn-down {
+        margin-top: 15px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: -20px;
+    }
+}

@@ -1,3 +1,21 @@
+
+.card-sport{
+  width: 100px;
+  height: 100px;
+  background-image:  linear-gradient(120deg, rgba(20,20,20,0.8), rgba(20,20,20,0.2)), url("https://wallpapercave.com/wp/wp5555815.jpg");
+  background-size: cover;
+  background-position: center;
+  text-overflow: ellipsis;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: $text-color;
+  justify-content: end;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  font-weight: 700;
+  
+}
 .card-sport-home{
   width: 200px;
   height: 200px;
@@ -7,7 +25,7 @@
   text-overflow: ellipsis;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  color:white;
+  color: $text-color;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -15,3 +33,5 @@
   flex-shrink: 0;
   margin: 0 8px;
 }
+
+
