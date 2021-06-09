@@ -4,7 +4,7 @@ class Ride < ApplicationRecord
   has_many :bookings
 
 
-  validates :from, :spot, :start_date, :end_date, :date, presence: true
+  validates :from, :spot, :start_time, :end_time, :date, presence: true
 
 
   include PgSearch::Model

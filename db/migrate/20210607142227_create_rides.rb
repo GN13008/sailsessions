@@ -3,8 +3,8 @@ class CreateRides < ActiveRecord::Migration[6.0]
     create_table :rides do |t|
       t.string :from
       t.string :spot
-      t.date :start_date
-      t.date :end_date
+      t.string :start_time
+      t.string :end_time
       t.string :title
       t.text :description, default: "Cette session n'a pas de description. Veuillez contacter l'organisateur pour plus d'informations!"
       t.integer :nb_of_place
