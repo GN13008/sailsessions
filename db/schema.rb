@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_134555) do
   create_table "rides", force: :cascade do |t|
     t.string "from"
     t.string "spot"
-    t.string "start_time"
-    t.string "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.string "title"
     t.text "description", default: "Cette session n'a pas de description. Veuillez contacter l'organisateur pour plus d'informations!"
     t.integer "nb_of_place"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_134555) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "sport_id"
-    t.string "date"
+    t.date "date"
     t.index ["sport_id"], name: "index_rides_on_sport_id"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end

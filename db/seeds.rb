@@ -47,11 +47,17 @@ ride2.sport = surf
 ride2.save
 puts "#{ride2.title} is created"
 
-ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_time: "11:00", end_time: "20:00", date: "17/06/2021" )
+ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_time: "18:00", end_time: "20:00", date: "17/06/2021" )
 ride3.user = pierre
 ride3.sport = sup
 ride3.save
 puts "#{ride3.title} is created"
+
+ride4 = Ride.new(title: "Session afterwork", from: "Aix", spot: "Aix", start_time: "18:00", end_time: "20:00", date: "20/06/2021" )
+ride4.user = ibra
+ride4.sport = wake
+ride4.save
+puts "#{ride4.title} is created"
 
 puts "Sessions are created"
 
