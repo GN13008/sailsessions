@@ -14,6 +14,10 @@
     .margin-top {
         margin-top: 5px;
     }
+
+    p, h1, h2, h3 {
+        color: $text-color;
+    }
 }
 
 // grande card de notification
@@ -26,6 +30,10 @@
     position: relative;
     margin-bottom: 40px;
 
+    p, h1, h2, h3 {
+        color: $text-color;
+    }
+    
     .top-card-mes-session {
         display: flex;
         justify-content: space-between;
