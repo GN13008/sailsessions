@@ -31,3 +31,10 @@
   position: sticky;
   bottom: 85px;
 }
+
+.btn-flat-search {
+  padding: 10px 50px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  color: $text-color;
+}
