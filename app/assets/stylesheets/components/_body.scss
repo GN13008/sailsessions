@@ -1,4 +1,11 @@
 .body {
     background-color: $primary-color;
     padding-bottom: 90px;
+    min-height: 512px;
 }
+
+@media screen and (min-height: 700px) {
+    .body {
+        min-height: 812px;
+    }
+  }

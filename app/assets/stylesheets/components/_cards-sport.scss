@@ -1,5 +1,8 @@
 .card-sport{
   width: 100px;
+  p, h1, h2, h3 {
+    color: $text-color;
+}
   
 }
 .card-sport-image{
@@ -37,6 +40,10 @@
   font-weight: 700;
   flex-shrink: 0;
   margin: 0 8px;
+
+  p, h1, h2, h3 {
+    color: $text-color;
+  }
 }
 
 
