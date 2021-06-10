@@ -39,9 +39,9 @@ class RidesController < ApplicationController
     @ride = Ride.new(ride_params)
     @ride.user = current_user
     if @ride.save
-      redirect_to @ride, notice: "Session confirmé"
+      redirect_to @ride, notice: "Votre session vient d'être créée"
     else
-      flash.alert = "Merci de remplir le formulaire ci-joint"
+      flash.alert = "Merci de remplir les champs nécessaires à la création d'une session."
       render :new
     end
   end
