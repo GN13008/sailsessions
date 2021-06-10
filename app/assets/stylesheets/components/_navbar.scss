@@ -21,7 +21,16 @@
   height: 75px;
   background: url(wave.png);
   background-size: 1000px 100px;
-  
+}
+
+.calm-water {
+  background-color: white;
+  opacity: 0.3;
+  height: 60px;
+  width:100%;
+  z-index: -3;
+  position: absolute;
+  bottom: 0;
 }
 
 .item {
