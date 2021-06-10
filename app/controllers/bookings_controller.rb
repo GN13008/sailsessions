@@ -4,17 +4,26 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new()
     @ride = Ride.find(params[:ride_id])
-    @booking = Booking.new(booking_params)
     @booking.ride = @ride
     @booking.user = current_user
 
     if @booking.save
-      redirect_to @ride
+      redirect_to rides_path
     else
       render @ride
       # Flash alert to be made
     end
+
+  # def update
+  #   @reservation = Reservation.find(params[:id])
+  #   @reservation.status = params[:status]
+  #   if @reservation.save
+  #     redirect_to dashboard_path
+  #   else
+  #     render "pages#dashboard"
+  #   end
   end
 
   def accept
