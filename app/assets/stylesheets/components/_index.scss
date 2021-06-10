@@ -16,11 +16,13 @@
 @import "carousel";
 @import "container-edit-profile";
 @import "barre-hr-color";
+@import "cards-contact";
 
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 p {
