@@ -18,3 +18,9 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+.avatar-profil-user{
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: $accent-color 2px solid;
+  width: 150px;
+}

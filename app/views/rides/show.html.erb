@@ -11,11 +11,11 @@
       </div>
       <div class="score-card-session">
         <h3 class="view-headline">Début</h3>
-        <h3 class="color-depart"><%= @ride.start_time %></h3>
+        <h3 class="color-depart"><%=@ride.format_hour(@ride.start_time) %></h3>
       </div>
       <div class="score-card-session">
         <h3 class="view-headline">Fin</h3>
-        <h3 class="color-depart"><%= @ride.end_time %></h3>
+        <h3 class="color-depart"><%=@ride.format_hour(@ride.end_time) %></h3>
       </div>
     </div>
 
@@ -28,10 +28,10 @@
         <div class="card-top">
           <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
           <div class="padding-h1">
-            <h1>Kelly Slater</h1>
+            <h1><%=@ride.user.name%></h1>
           </div>
         </div>
-        <p class="padding-text">User bio à changer pour @user.bio</p>
+        <p class="padding-text"><%=@ride.user.bio%></p>
         <div id="btn-contact">
           <a class="btn btn-flat background-accent-color" href="#">Contacter</a>
         </div>
@@ -99,6 +99,10 @@
   </div>
   <!-- Sticky Réserver Button -->
   <div class="sticky-btn">
-    <a class="btn btn-flat background-accent-color margin-top big-btn" href="#">Réserver</a>
+    <%= link_to "Réserver",
+    ride_bookings_path(@ride),
+    method: :post,
+    data: { confirm: "Réservation confirmé !" },
+    class: 'btn btn-flat background-accent-color margin-top big-btn' %>
   </div>
 </div>

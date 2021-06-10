@@ -26,18 +26,18 @@
     </div>
   <h2 class="pt-3 view-headline">Ta session par sport</h2>
 <!-- Carroussel Images -->
-    <section class="carousel">
-        <ul class="carousel-items">
-            <% @sports.each do |sport| %>
-              <a href="/search?sport=<%= sport.name %>&depart=&date=&commit=Trouve+ta+session">
-                <div class="card-sport-home">
-                    <h1><%= sport.name %></h1>
-                  <li class="carousel-item"></li>
-                </div>
-              </a>
-            <% end %>
-        </ul>
-    </section>
+  <section class="carousel">
+      <ul class="carousel-items">
+          <% @sports.each do |sport| %>
+            <a href="/search?sport=<%= sport.name %>&depart=&date=&commit=Trouve+ta+session">
+              <div class="card-sport-home" style="background-image: linear-gradient(120deg, rgba(20,20,20,0.8), rgba(20,20,20,0.2)), url('<%= sport.image_url %>')">
+                  <h1><%= sport.name %></h1>
+                <li class="carousel-item"></li>
+              </div>
+            </a>
+          <% end %>
+      </ul>
+  </section>
 
 
 

@@ -1,5 +1,9 @@
 class RidesController < ApplicationController
   def index
+    #les réservations que je fait
+    @mybookings = current_user.bookings
+    #les sessions que j'ai crées
+    @myrides = current_user.rides
   end
 
   def search

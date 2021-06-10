@@ -11,26 +11,23 @@ Ride.destroy_all
 puts "-------- Seeding in process --------"
 
 puts "Creating 5 sports"
-surf = Sport.create!(name: "Surf", description: "Pense a préciser la taille de ta planche pour assurer le transport :)")
-# surfimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622628942/pk5n4dap7dnsoeed7f3izmfny1jk.png")
-# surf.photo.attach(io: surfimage, filename: 'v1622628942pk5n4dap7dnsoeed7f3izmfny1jk.png')
-
-sup = Sport.create!(name: "Stand up paddle", description: "Pense a préciser la taille de ta planche pour assurer le transport :)")
-wind = Sport.create!(name: "Windsurf", description: "Pense a préciser la taille de ta planche pour assurer le transport :)")
-kite = Sport.create!(name: "Kitesurf", description: "Pense a préciser la taille de ta planche pour assurer le transport :)")
-wake = Sport.create!(name: "Wakeboard", description: "Pense a préciser la taille de ta planche pour assurer le transport :)")
+surf = Sport.create!(name: "Surf", description: "Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335105/surf_hqehba.jpg")
+sup = Sport.create!(name: "Stand up paddle", description: "Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335140/sup_z0elub.jpg")
+wind = Sport.create!(name: "Windsurf", description: "Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335139/wind_zul21x.jpg")
+kite = Sport.create!(name: "Kitesurf", description: "Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335140/kite_q0dcc5.jpg")
+wake = Sport.create!(name: "Wakeboard", description: "Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335116/wake_qqsr4x.jpg")
 
 
 puts "Sports creation finished"
 puts "Creating 4 users"
 
-gui = User.create!(email: "gui@gmail.com", password: "password")
+gui = User.create!(email: "gui@gmail.com", password: "password", bio: "le maitre du back" , name: "Guillaume Negro", age: "25ans")
 # guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622628942/pk5n4dap7dnsoeed7f3izmfny1jk.png")
 # gui.photo.attach(io: guiimage, filename: 'v1622628942pk5n4dap7dnsoeed7f3izmfny1jk.png')
 
-ibra = User.create!(email: "ibra@gmail.com", password: "password")
-flo = User.create!(email: "flo@gmail.com", password: "password")
-pierre = User.create!(email: "pierre@gmail.com", password: "password")
+ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "le maitre du design" , name: "Ibrahim", age: "25ans")
+flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "le maitre du front la navbar magique" , name: "Florent", age: "25ans")
+pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "le maitre du café" , name: "Pierre", age: "25ans")
 
 puts "Users are created"
 puts "Creating 3 rides"
@@ -60,8 +57,24 @@ ride4.save
 puts "#{ride4.title} is created"
 
 puts "Sessions are created"
+puts "Creating 3 bookings"
 
+booking1 = Booking.new()
+booking1.user = gui
+booking1.ride = ride3
+booking1.save
+puts "Guillaume reserve la session sup de Pierre"
 
+booking2 = Booking.new()
+booking2.user = gui
+booking2.ride = ride2
+booking2.save
+puts "Guillaume reserve la session surf de Pierre"
 
+booking3 = Booking.new()
+booking3.user = pierre
+booking3.ride = ride1
+booking3.save
+puts "Pierre reserve la session kite de Guillaume"
 
-
+puts "booking are done"

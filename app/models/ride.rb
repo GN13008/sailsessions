@@ -16,4 +16,7 @@ class Ride < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  def format_hour(time)
+    return "#{time.hour}:#{(time.min < 10) ? "0#{time.min}" : time.min}"
+  end
 end
