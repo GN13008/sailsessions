@@ -11,33 +11,35 @@
         <div class="container">
             <h1 class="margin-top">Tes reservations en attente !</h1>
             <% @myrides.each do |ride| %>
-            <% ride.bookings.each do |booking| %>
-                <div class="card-mes-session booking">
-                <div class="top-card-mes-session">
-                    <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
-                    <div class="right-flex">
-                        <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                        <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                        <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                    </div>
-                </div>
-                <div class="bar-white"></div>
-                <div class="card-middle">
-                    <p>Sport : <%= booking.ride.sport.name %></p>
-                    <p>Spot : <%= booking.ride.spot %></p>
-                    <p>Date : <%= booking.ride.date %></p>
-                    <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
-                    <p>status : <%= booking.status %></p>
-                    <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
-                </div>
-                <div class="btn-inline">
-                    <div class="card-btn-down">
-                        <a class="btn btn-flat background-grey-color" href="#">Refuser</a>
-                        <a class="btn btn-flat background-accent-color" href="#">Accepter</a>
-                    </div>
-                </div>
-                </div>
-            <% end %>
+                <% ride.bookings.each do |booking| %>
+                    <%= link_to ride_path(ride) do  %>
+                        <div class="card-mes-session booking">
+                            <div class="top-card-mes-session">
+                                <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
+                                <div class="right-flex">
+                                    <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                    <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                    <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                </div>
+                            </div>
+                            <div class="bar-white"></div>
+                            <div class="card-middle">
+                                <p>Sport : <%= booking.ride.sport.name %></p>
+                                <p>Spot : <%= booking.ride.spot %></p>
+                                <p>Date : <%= booking.ride.date %></p>
+                                <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
+                                <p>status : <%= booking.status %></p>
+                                <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
+                            </div>
+                            <div class="btn-inline">
+                                <div class="card-btn-down">
+                                    <a class="btn btn-flat background-grey-color" href="#">Refuser</a>
+                                    <a class="btn btn-flat background-accent-color" href="#">Accepter</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>    
+                <% end %>
             <% end %>
         </div>
     </div>
@@ -46,49 +48,53 @@
         <div class="container">
             <h1 class="margin-top">Tes reservations !</h1>
             <% @myrides.each do |ride| %>
-            <% ride.bookings.each do |booking| %>
-                <div class="card-mes-session">
-                    <div class="top-card-mes-session">
-                        <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
-                        <div class="right-flex">
-                            <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                            <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                            <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                <% ride.bookings.each do |booking| %>
+                    <%= link_to ride_path(ride) do  %>
+                        <div class="card-mes-session">
+                            <div class="top-card-mes-session">
+                                <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
+                                <div class="right-flex">
+                                    <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                    <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                    <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                </div>
+                            </div>
+                            <div class="bar-white"></div>
+                            <div class="card-middle">
+                                <p>Sport : <%= booking.ride.sport.name %></p>
+                                <p>Spot : <%= booking.ride.spot %></p>
+                                <p>Date : <%= booking.ride.date %></p>
+                                <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
+                                <p>status : <%= booking.status %></p>
+                                <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bar-white"></div>
-                    <div class="card-middle">
-                        <p>Sport : <%= booking.ride.sport.name %></p>
-                        <p>Spot : <%= booking.ride.spot %></p>
-                        <p>Date : <%= booking.ride.date %></p>
-                        <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
-                        <p>status : <%= booking.status %></p>
-                        <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
-                    </div>
-                </div>
-            <% end %>
+                    <% end %>
+                <% end %>
             <% end %>
             <h1>Tes Rides à venir ! </h1>
             <% @mybookings.each do |booking| %>
-            <div class="card-mes-session">
-                <div class="top-card-mes-session">
-                    <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
-                    <div class="right-flex">
-                        <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                        <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-                        <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                <%= link_to ride_path(booking) do  %>
+                    <div class="card-mes-session">
+                        <div class="top-card-mes-session">
+                            <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
+                            <div class="right-flex">
+                                <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                                <img class="profile-pic margin" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
+                            </div>
+                        </div>
+                        <div class="bar-white"></div>
+                        <div class="card-middle">
+                            <p>Sport : <%= booking.ride.sport.name %></p>
+                            <p>Spot : <%= booking.ride.spot %></p>
+                            <p>Date : <%= booking.ride.date %></p>
+                            <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
+                            <p>status : <%= booking.status %></p>
+                            <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
+                        </div>
                     </div>
-                </div>
-                <div class="bar-white"></div>
-                <div class="card-middle">
-                    <p>Sport : <%= booking.ride.sport.name %></p>
-                    <p>Spot : <%= booking.ride.spot %></p>
-                    <p>Date : <%= booking.ride.date %></p>
-                    <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
-                    <p>status : <%= booking.status %></p>
-                    <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
-                </div>
-            </div>
+                <% end %>    
             <% end %>
         </div>
     </div>
