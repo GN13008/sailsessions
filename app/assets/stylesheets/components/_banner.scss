@@ -17,6 +17,9 @@
 }
  .content-container {
   padding-top: 10px;
+  h1, h3{
+    color: $text-color;
+  }
  }
 
 .banner-CTA {

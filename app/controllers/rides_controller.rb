@@ -8,8 +8,13 @@ class RidesController < ApplicationController
 
   def search
     @rides = Ride.all
+    @sport = "tous sports confondus"
+    @description = "Choisis une session, accède aux meilleurs spots et profites un max !"
+    @from = params[:depart]
+    @date = params[:date]
     if params[:sport].present? # && params[:when].present?
       @rides = Ride.search_by_sport(params[:sport])
+      @sport = "de #{params[:sport]}"
     #   @offers = Offer.search_by_localisation(params[:where])
     #   @offers = @offers.search_by_disponibility(params[:when])
     # elsif params[:when].present?
