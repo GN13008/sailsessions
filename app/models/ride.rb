@@ -19,4 +19,8 @@ class Ride < ApplicationRecord
   def format_hour(time)
     return "#{time.hour}:#{(time.min < 10) ? "0#{time.min}" : time.min}"
   end
+
+  def get_date
+    created_at.strftime('%A %d %B')
+  end
 end
