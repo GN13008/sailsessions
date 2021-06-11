@@ -18,7 +18,7 @@
         <h3 class="color-depart"><%=@ride.format_hour(@ride.end_time) %></h3>
       </div>
     </div>
-   
+
 
     <!-- Informations complémentaires sur la session -->
     <div class="flex-fill pl-3 pt-2">
@@ -38,23 +38,23 @@
         </div>
       </div>
         <div id="btn-contact">
-          <a class="btn btn-flat background-accent-color" href="#">Contacter</a>
+         <h3 class="view-headline"><a class="btn btn-flat background-accent-color" href="#">Contacter</a></h3>
         </div>
       </div>
-    
+
  <!-- Fin Card Contact Component -->
       </div>
     </div>
   <hr>
-  
+
       <!-- Description de la session -->
-  <div>
+  <div class="container">
     <h2 class="view-headline">Découvre cette session</h2>
     <p class="view-headline"><%= @ride.description %></p>
     <hr>
   </div>
   <!-- Objets d'échange entre sessionners -->
-  <div>
+  <div class="container">
     <h2 class="view-headline">Choisis ce que tu apportes</h2>
     <p class="view-headline">Si cette session t'intéresses, alors il ne te reste pus qu'à choisir ce que tu souhaites apporter en échange du covoiturage. N'hésites pas à en discuter avec l'hôte pour trouver un compromis. </p>
   <!-- Dropdown button -->
@@ -71,37 +71,39 @@
   </div>
   <hr>
   <!-- Reviews Section -->
-  <div class="card-reviews">
-    <div class="card-top">
-      <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
-      <div class="padding-h1">
-        <h2>Kelly Slater</h2>
-        <h3>Mars 2021</h3>
+  <div class="container">
+    <div class="card-reviews">
+      <div class="card-top">
+        <img class="profile-pic" src="https://images.unsplash.com/photo-1600721391715-1c08ac1393ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80" alt="profile">
+        <div class="padding-h1">
+          <h3>Kelly Slater</h3>
+          <h3>Mars 2021</h3>
+        </div>
       </div>
+        <p class="padding-text">J'ai eu l'occasion d'aller faire une session de Kite avec Guillaume, nous avons passé un super moment. La communication était claire et je renouvellerai l'expérience.</p>
     </div>
-      <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
-  </div>
-
-<div class="card-reviews">
-    <div class="card-top">
-      <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
-      <div class="padding-h1">
-        <h2>Kelly Slater</h2>
-        <h3>Mars 2021</h3>
-      </div>
-    </div>
-      <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
-  </div>
 
   <div class="card-reviews">
-    <div class="card-top">
-      <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
-      <div class="padding-h1">
-        <h2>Kelly Slater</h2>
-        <h3>Mars 2021</h3>
+      <div class="card-top">
+        <img class="profile-pic" src="https://images.unsplash.com/photo-1571224736343-7182962ae3e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="profile">
+        <div class="padding-h1">
+          <h3>John Tagiri</h3>
+          <h3>Février 2021</h3>
+        </div>
       </div>
+        <p class="padding-text">Quel beau moment nous avons passé, le spot de Kite que GuiGui (seulement pour les intimes) m'a fait découvrir est devenu l'un de mes préférés!</p>
     </div>
-      <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
+
+    <div class="card-reviews">
+      <div class="card-top">
+        <img class="profile-pic" src="https://images.unsplash.com/photo-1622673705547-2609427981ef?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY5fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="profile">
+        <div class="padding-h1">
+          <h3>Jackson David</h3>
+          <h3>Août 2021</h3>
+        </div>
+      </div>
+        <p class="padding-text">Guillaume est un super camarade de Kite, j'ai beaucoup appris avec lui. Merci à SailSession de nous avoir connectés, j'ai trouvé en Guigui un compagnon d'aventure. Kudos!</p>
+    </div>
   </div>
   <!-- Sticky Réserver Button -->
   <div class="sticky-btn">
