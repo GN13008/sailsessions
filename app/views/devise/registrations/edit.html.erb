@@ -67,16 +67,14 @@
 
      
 
-      <%= f.button :submit, "Update", class:"btn btn-flat background-accent-color" %>
+      <%= f.button :submit, "Update", class:"btn btn-flat background-accent-color big-btn link-to-h3" %>
 
     </div>
   <% end %>
+<div class="notre-container btn-container">
+  <%= link_to "Cancel my account", registration_path(resource_name), class:"btn btn-flat background-secondary-color" , data: { confirm: "Are you sure?" }, method: :delete %>
 
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-
-  <%= link_to "log out" , destroy_user_session_path, method: :delete %>
+  <%= link_to "log out" , destroy_user_session_path, method: :delete, class:"btn btn-flat background-secondary-color"  %>
+</div>
 
 </div>
