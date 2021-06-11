@@ -44,13 +44,13 @@ ride1.sport = kite
 ride1.save
 puts "#{ride1.title} is created"
 
-ride2 = Ride.new(title: "Session afterwork", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
+ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
 ride2.user = pierre
 ride2.sport = surf
 ride2.save
 puts "#{ride2.title} is created"
 
-ride3 = Ride.new(title: "Session afterwork", from: "Aix", spot: "six-four", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
+ride3 = Ride.new(title: "Session SUP afterwork", from: "Aix", spot: "six-four", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
 ride3.user = pierre
 ride3.sport = sup
 ride3.save
