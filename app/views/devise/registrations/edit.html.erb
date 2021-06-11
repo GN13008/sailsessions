@@ -2,7 +2,11 @@
 <div class="container-de-pierre-le-plus-beau">
   <div class="container-edit-profile">
     <div class="avatar-edit-profile"> 
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-profil-user"%>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-profil-user" %>
+      <% else %>
+        <%= image_tag 'logo-sail-sessions.png', class: "avatar-profil-user" %>
+      <% end %>
     </div>
     <div >
       <h1><%=current_user.name%></h1>

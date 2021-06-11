@@ -48,12 +48,16 @@
         <div class="card-session">
           <div class="card-session-colum">
               <h3><%= ride.title %></h3>
-              <p><%= ride.nb_of_place %></p>
-              <p><%= ride.spot %></p>
+              <p>Place : <%= ride.nb_of_place %></p>
+              <p>Spot : <%= ride.spot %></p>
           </div>
           <div class="card-session-colum  right">
-              <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-              <p><%= ride.date %></p>
+            <% if ride.user.photo.attached? %>
+              <%= cl_image_tag ride.user.photo.key, class: "profile-pic" %>
+            <% else %>
+              <%= image_tag 'logo-sail-sessions.png', class: "profile-pic" %>
+            <% end %>
+            <p><%= ride.date %></p>
           </div>
         </div>
       <% end %>

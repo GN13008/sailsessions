@@ -1,6 +1,7 @@
 <div class="container">
-  <h1>Il y a <%= @rides.count %> sessions <%= @sport %> </h1>
+  <h1 class="pt-4">Il y a <%= @rides.count %> sessions <%= @sport %> </h1>
   <h2><%= @description %></h2>
+  <hr>
   <% @rides.each do |ride| %>
     <%= link_to ride_path(ride) do %>
       <div class="card-session">
@@ -10,8 +11,12 @@
             <p>Spot : <%= ride.spot %></p>
         </div>
         <div class="card-session-colum  right">
-            <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
-            <p><%= ride.date %></p>
+          <% if ride.user.photo.attached? %>
+            <%= cl_image_tag ride.user.photo.key, class: "profile-pic" %>
+          <% else %>
+            <%= image_tag 'logo-sail-sessions.png', class: "profile-pic" %>
+          <% end %>
+          <p><%= ride.date %></p>
         </div>
       </div>
     <% end %>
