@@ -1,4 +1,4 @@
-<div class="container">
+<div class="notre-container">
     <h1 class="view-headline pt-3">Create your session</h1>
     <%= simple_form_for(@ride) do |f| %>
         <%= f.association :sport, label: 'Sport :' %>
@@ -11,6 +11,6 @@
         <%= f.input :end_time, label: 'Heure de fin :' %>
         <%= f.input :exchange_item, label: 'Objet à échanger :' %>
         <%= f.input :description, label: 'Description :' %>
-        <%= f.submit class:"btn-flat", class:"btn btn-flat background-accent-color", label: "Crée ta session" %>
+        <%= f.submit class:"btn-flat", class:"btn btn-flat background-accent-color .link-to-h3 big-btn", label: "Crée ta session" %>
     <% end %>
 </div>
