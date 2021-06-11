@@ -23,15 +23,19 @@
     <div class="flex-fill pl-3 pt-2">
       <h3 class="view-headline">Spot: <%= @ride.spot %></h3>
       <h3 class="view-headline">Faites connaissance avec : </h3>
+
   <!-- Card Contact Component -->
       <div class="card-reviews">
         <div class="card-top">
-          <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&amp;ext=jpg" alt="profile">
-          <div class="padding-h1">
-            <h1><%=@ride.user.name%></h1>
-          </div>
+<!-- Mécanisme de remplacement des photos par celles de l'utilisateur créateur de l'offre -->
+          <% if @ride.user.photo.attached? %>
+            <%= cl_image_tag @rides.user.photo.key, class: "profile-pic" %>
+          <% else %>
+            <%= image_tag "logo-sail-sessions.png", class: "profile-pic" %>
+          <% end %>
+          <h3 class="ml-3"><%=@ride.user.name%></h3>
         </div>
-        <p class="padding-text"><%=@ride.user.bio%></p>
+      </div>
         <div id="btn-contact">
           <a class="btn btn-flat background-accent-color" href="#">Contacter</a>
         </div>
