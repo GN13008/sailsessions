@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :rides
   has_many :bookings
   has_many :user_sports
+
+  has_one_attached :photo
 end
