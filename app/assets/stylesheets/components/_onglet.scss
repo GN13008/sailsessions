@@ -1,0 +1,41 @@
+
+.top-onglet-btn {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        h2 {
+            padding: 8px 20%;
+            margin-bottom: 0;
+        }
+    }
+
+    .btn-active {
+        background-color: $accent-color;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+#active {
+    display: contents;
+}
+
+.onglet {
+    display: none;
+    .container {
+        border: solid 3px $accent-color;
+    }
+
+    .margin-top {
+        margin-top: 8px;
+    }
+}
