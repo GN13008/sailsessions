@@ -1,24 +1,13 @@
 <div class="container">
-  <div class="banner-search">
-    <div class="container">
-      <div class="search-form-control form-group form-inline">
-        <%= form_with url: "/search", method: :get, local: true do |form| %>
-          <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control" %>
-          <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control" %>
-          <%= form.date_field :date, placeholder: "Quand ?", class: "form-control" %>
-          <%= form.submit "Trouve ta session", class: "btn btn-flat background-accent-color" %>
-        <% end %>
-      </div>
-    </div>
-    <h1>This is all the result for SURF - XX sessions available</h1>
-  </div>
+  <h1>Il y a <%= @rides.count %> sessions <%= @sport %> </h1>
+  <h2><%= @description %></h2>
   <% @rides.each do |ride| %>
     <%= link_to ride_path(ride) do %>
       <div class="card-session">
         <div class="card-session-colum">
             <h3><%= ride.title %></h3>
-            <p><%= ride.nb_of_place %></p>
-            <p><%= ride.spot %></p>
+            <p>Place : <%= ride.nb_of_place %></p>
+            <p>Spot : <%= ride.spot %></p>
         </div>
         <div class="card-session-colum  right">
             <img class="profile-pic" src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg" alt="profile">
@@ -27,4 +16,13 @@
       </div>
     <% end %>
   <% end %>
+  <hr>
+  <div class="search-form-control form-group form-inline center-search">
+    <%= form_with url: "/search", method: :get, local: true do |form| %>
+      <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
+      <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom" %>
+      <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
+      <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
+    <% end %>
+  </div>
 </div>
