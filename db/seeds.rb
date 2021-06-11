@@ -95,4 +95,16 @@ booking3.ride = ride1
 booking3.save
 puts "Pierre reserve la session kite de Guillaume"
 
+booking4 = Booking.new()
+booking4.user = flo
+booking4.ride = ride1
+booking4.save
+puts "Flo reserve la session kite de Guillaume"
+
+booking5 = Booking.new()
+booking5.user = ibra
+booking5.ride = ride2
+booking5.save
+puts "ibra reserve la session surf de Pierre"
+
 puts "booking are done"

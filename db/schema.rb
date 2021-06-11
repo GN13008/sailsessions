@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_094324) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.string "status", default: "demand"
+    t.string "status", default: "en attente"
     t.bigint "ride_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

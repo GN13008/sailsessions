@@ -1,7 +1,7 @@
 class CreateBookings < ActiveRecord::Migration[6.0]
   def change
     create_table :bookings do |t|
-      t.string :status, default: "demand"
+      t.string :status, default: "en attente"
       t.references :ride, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
