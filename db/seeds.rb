@@ -21,13 +21,13 @@ wake = Sport.create!(name: "Wakeboard", description: "Pense a préciser la taill
 puts "Sports creation finished"
 puts "Creating 4 users"
 
-gui = User.create!(email: "gui@gmail.com", password: "password", bio: "le maitre du back" , name: "Guillaume Negro", age: "25ans")
+gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour je m'appelle Guillaume passionné de kitesurf je recherche une communauté pour partager ma passion et faire de nouvelles rencontres mais aussi pour partager un moment agréable" , name: "Guillaume Negro", age: "27ans")
 # guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622628942/pk5n4dap7dnsoeed7f3izmfny1jk.png")
 # gui.photo.attach(io: guiimage, filename: 'v1622628942pk5n4dap7dnsoeed7f3izmfny1jk.png')
 
-ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "le maitre du design" , name: "Ibrahim", age: "25ans")
-flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "le maitre du front la navbar magique" , name: "Florent", age: "25ans")
-pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "le maitre du café" , name: "Pierre", age: "25ans")
+ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "salut moi c'est Ibrahim j'adore rencontrer de nouvelles personnes, je suis un grand fan du paddle cela me permet de voir des paysages extraordinaires alors pourquoi pas le faire à plusieurs" , name: "Ibrahim", age: "25ans")
+flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "bonjour je me présente Florent je suis professionnelle de Sailboard j'aimerais trouver des gens qui ont un bon niveau pour fair des grosses sessions et partager mon savoir-faire et mes skills" , name: "Florent", age: "32ans")
+pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre je pratique le surf depuis 5 ans environ mais c’est vrai que je surf tout le temps en solitaire et Jen a un peu marre du coup je suis ici pour faire pleins de rencontre partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
 
 puts "Users are created"
 puts "Creating 3 rides"
