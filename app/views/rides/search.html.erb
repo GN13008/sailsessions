@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Il y a <%= @rides.count %> sessions de SPORT </h1>
-  <h2>La description de ton sport</h2>
+  <h1>Il y a <%= @rides.count %> sessions <%= @sport %> </h1>
+  <h2><%= @description %></h2>
   <% @rides.each do |ride| %>
     <%= link_to ride_path(ride) do %>
       <div class="card-session">
