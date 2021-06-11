@@ -83,7 +83,7 @@
                                         <% else %>
                                             <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin driver" %>
                                         <% end %>
-                                        <% booking.ride.bookings.each do |b| %>
+                                        <% booking.ride.bookings.where(status: "acceptée").each do |b| %>
                                             <% if b.user.photo.attached? %>
                                                 <%= cl_image_tag b.user.photo.key, class: "profile-pic margin" %>
                                             <% else %>
@@ -128,7 +128,7 @@
                                 <% else %>
                                     <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin driver" %>
                                 <% end %>
-                                <% booking.ride.bookings.each do |b| %>
+                                <% booking.ride.bookings.where(status: "acceptée").each do |b| %>
                                     <% if b.user.photo.attached? %>
                                         <%= cl_image_tag b.user.photo.key, class: "profile-pic margin" %>
                                     <% else %>
