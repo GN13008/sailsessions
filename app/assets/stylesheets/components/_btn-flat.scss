@@ -38,3 +38,11 @@
   transition: background 0.3s ease;
   color: $text-color;
 }
+
+// position du back btn
+
+.position-top-left {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
