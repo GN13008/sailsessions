@@ -13,6 +13,7 @@
             <% if @resa_en_att != 0 %>
                 <% @myrides.each do |ride| %>
                     <% ride.bookings.where(status: "en attente").each do |booking| %>
+                    <%= link_to ride_path(ride) do  %>
                         <div class="card-mes-session booking">
                             <div class="top-card-mes-session">
                                 <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
@@ -71,6 +72,7 @@
             <% if @resa_acceptee != 0 %>
                 <% @myrides.each do |ride| %>
                     <% ride.bookings.where(status: "acceptée").each do |booking| %>
+                    <%= link_to ride_path(ride) do  %>
                         <div class="card-mes-session">
                             <div class="top-card-mes-session">
                                 <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
@@ -114,6 +116,7 @@
             <% end %>
             <h1>Tes Rides à venir ! </h1>
             <% @mybookings.each do |booking| %>
+            <%= link_to ride_path(booking) do  %>
             <div class="card-mes-session">
                 <div class="top-card-mes-session">
                     <h3 class="titre-margin-top"><%= booking.ride.title %></h3>
@@ -131,17 +134,7 @@
                             <% end %>
                         <% end %>
                     </div>
-                </div>
-                <div class="bar-white"></div>
-                <div class="card-middle">
-                    <p>Sport : <%= booking.ride.sport.name %></p>
-                    <p>Spot : <%= booking.ride.spot %></p>
-                    <p>Date : <%= booking.ride.date %></p>
-                    <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
-                    <p>status : <%= booking.status %></p>
-                    <p class="margin-bottom">N'oublie pas de rapporter : <%= booking.ride.title %></p>
-                </div>
-            </div>
+                <% end %>    
             <% end %>
         </div>
     </div>
