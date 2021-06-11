@@ -30,7 +30,7 @@
         <div class="card-top">
 <!-- Mécanisme de remplacement des photos par celles de l'utilisateur créateur de l'offre -->
           <% if @ride.user.photo.attached? %>
-            <%= cl_image_tag @rides.user.photo.key, class: "profile-pic" %>
+            <%= cl_image_tag @ride.user.photo.key, class: "profile-pic" %>
           <% else %>
             <%= image_tag "logo-sail-sessions.png", class: "profile-pic" %>
           <% end %>
@@ -41,11 +41,12 @@
           <a class="btn btn-flat background-accent-color" href="#">Contacter</a>
         </div>
       </div>
+    
  <!-- Fin Card Contact Component -->
       </div>
     </div>
-  </div>
   <hr>
+  
       <!-- Description de la session -->
   <div>
     <h2 class="view-headline">Découvre cette session</h2>
