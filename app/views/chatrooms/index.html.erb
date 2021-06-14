@@ -1,0 +1,67 @@
+<div class="container">
+  <h1 class="pt-4">Bienvenue dans la chatroom</h1>
+  <h3>Ici tu peux discuter avec les autres riders de tes sessions.</h3>
+  <p>Les bières sont bien prévus ? On a des Gopro chargées ?</p>
+  <p>Allez va organiser tout ca !</p>
+  <hr>
+  <h3>Les session ou tu es conducteur :</h3>
+  <% @myrides.each do |r| %>
+    <%= link_to chatroom_path(r.chatroom) do %>
+      <div class="card-mes-session booking">
+        <div class="top-card-mes-session">
+          <h3 class="titre-margin-top"><%= r.chatroom.name %></h3>
+          <div class="right-flex">
+            <p>Date : <%= r.chatroom.ride.date %></p>
+          </div>
+        </div>
+        <div class="bar-white"></div>
+        <div class="card-middle">
+          <div class="right-flex">
+            <% if r.chatroom.ride.user.photo.attached? %>
+                <%= cl_image_tag r.chatroom.ride.user.photo.key, class: "profile-pic margin driver" %>
+            <% else %>
+                <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin driver" %>
+            <% end %>
+            <% r.chatroom.ride.bookings.where(status: "acceptée").each do |b| %>
+              <% if b.user.photo.attached? %>
+                  <%= cl_image_tag b.user.photo.key, class: "profile-pic margin" %>
+              <% else %>
+                  <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <h3>Les sessions ou tu es passager : </h3>
+  <% @mybookings.each do |b| %>
+    <%= link_to chatroom_path(b.ride.chatroom) do %>
+      <div class="card-mes-session booking">
+        <div class="top-card-mes-session">
+          <h3 class="titre-margin-top"><%= b.ride.chatroom.name %></h3>
+          <div class="right-flex">
+            <p>Date : <%= b.ride.chatroom.ride.date %></p>
+          </div>
+        </div>
+        <div class="bar-white"></div>
+        <div class="card-middle">
+          <div class="right-flex">
+            <% if b.ride.chatroom.ride.user.photo.attached? %>
+                <%= cl_image_tag b.ride.chatroom.ride.user.photo.key, class: "profile-pic margin driver" %>
+            <% else %>
+                <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin driver" %>
+            <% end %>
+            <% b.ride.chatroom.ride.bookings.where(status: "acceptée").each do |c| %>
+              <% if c.user.photo.attached? %>
+                  <%= cl_image_tag c.user.photo.key, class: "profile-pic margin" %>
+              <% else %>
+                  <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

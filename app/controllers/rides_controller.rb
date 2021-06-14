@@ -50,6 +50,10 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
+    chatroom = Chatroom.new
+    chatroom.name = @ride.title
+    chatroom.ride = @ride
+    flash.alert = "Problème de chatroom" unless chatroom.save
     if @ride.save
       redirect_to @ride, notice: "Votre session vient d'être créée"
     else

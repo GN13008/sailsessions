@@ -2,6 +2,7 @@ class Ride < ApplicationRecord
   belongs_to :user
   belongs_to :sport
   has_many :bookings
+  has_one :chatroom
 
 
   validates :from, :spot, :start_time, :end_time, :date, presence: true

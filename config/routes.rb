@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   patch "/bookings/:id", to: "bookings#status", as: :change_status_booking
 
   get "/components", to: "pages#components", as: :components
+
+  resources :chatrooms, only: :index
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
