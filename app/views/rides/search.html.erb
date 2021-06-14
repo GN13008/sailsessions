@@ -1,3 +1,8 @@
+<head>
+  <title>Toutes nos sessions | SailSessions</title>
+  <meta name="description" content="Parcourez l'ensemble des sessions nautiques disponibles sur SailSession. Kite, Windsurf, Surf et plus méritent d'être partagés.">
+</head>
+
 <div class="container">
   <h1 class="pt-4">Il y a <%= @rides.count %> sessions <%= @sport if params[:sport].present? %></h1>
   <h2><%= @description %></h2>
@@ -23,10 +28,11 @@
   <% end %>
   <hr>
   <div class="search-form-control form-group form-inline center-search">
-    <%= form_with url: "/search", method: :get, local: true do |form| %>
-      <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
-      <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom" %>
-      <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
+    <%= form_with url: "/search", method: :get, local: true, :remote => true  do |form| %>
+     <!-- Dropdown -->
+    <%= form.select :sport, Sport.all.map {|sport| sport.name}, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
+    <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom", id:"from-input"%>
+    <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
       <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
     <% end %>
   </div>

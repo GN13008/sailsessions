@@ -1,4 +1,7 @@
-
+<head>
+  <title>Dashboard | SailSessions</title>
+  <meta name="description" content="En quelques clics, consultez l'ensemble des réservations que vous avez faites. ">
+</head>
 <%# top btn onglet %>
 <div class="top-onglet-btn">
     <button class="onglet-btn" data-anim="1"><h2>Réservation en attente</h2></button>
@@ -39,7 +42,7 @@
                                         <%= link_to "Refuser",
                                             change_status_booking_path(booking,status: "refusée"),
                                             method: :patch,
-                                            data: { confirm: "Tu veux vraiment refuser cette réservations ?" }, 
+                                            data: { confirm: "Tu veux vraiment refuser cette réservations ?" },
                                             class: 'btn btn-flat background-grey-color' %>
 
                                         <%= link_to "Accepter",
@@ -147,7 +150,7 @@
                             <p class="margin-bottom">N'oublie pas de rapporter : -</p>
                         </div>
                     </div>
-                <% end %>    
+                <% end %>
             <% end %>
         </div>
     </div>
