@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
   def status
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
-
+    @booking.ride.nb_of_place -= params[:nb].to_i
     if @booking.save
       redirect_to rides_path
     else

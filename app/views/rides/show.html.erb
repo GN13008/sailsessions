@@ -61,16 +61,16 @@
     <h2 class="view-headline">Choisis ce que tu apportes</h2>
     <p class="view-headline">Si cette session t'intéresses, alors il ne te reste pus qu'à choisir ce que tu souhaites apporter en échange du covoiturage. N'hésites pas à en discuter avec l'hôte pour trouver un compromis. </p>
   <!-- Dropdown button -->
-    <div class="dropdown pt-3" id="echange-selector">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-echange" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Fais ton choix!
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <button class="dropdown-item" type="button">J’apporte les bières!</button>
-        <button class="dropdown-item" type="button">J’apporte le pique nique!</button>
-        <button class="dropdown-item" type="button">Je propose à l’hôte quelquechose</button>
+    <% if (current_user.id != @ride.user_id) %>
+      <div class="dropdown pt-3" id="echange-selector">
+        <select name="choix" class="btn btn-secondary dropdown-toggle" id="dropdown-echange">
+          <option value="">Fais ton choix!</option>
+          <option value="bieres">J’apporte les bières!</option>
+          <option value="pique nique">J’apporte le pique nique!</option>
+          <option value="autre">Je propose à l’hôte quelquechose</option>
+        </select>
       </div>
-    </div>
+    <% end %>
   </div>
   <hr>
   <!-- Reviews Section -->
@@ -109,11 +109,13 @@
     </div>
   </div>
   <!-- Sticky Réserver Button -->
-  <div class="sticky-btn">
-    <%= link_to "Réserver",
-    ride_bookings_path(@ride),
-    method: :post,
-    data: { confirm: "Réservation confirmé !" },
-    class: 'btn btn-flat background-accent-color margin-top big-btn link-to-h3' %>
-  </div>
+    <% if (current_user.id != @ride.user_id) %>
+      <div class="sticky-btn">
+          <%= link_to "Réserver",
+          ride_bookings_path(@ride),
+          method: :post,
+          data: { confirm: "Réservation confirmé !" },
+          class: 'btn btn-flat background-accent-color margin-top big-btn link-to-h3' %>
+      </div>
+    <% end %>
 </div>
