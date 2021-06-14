@@ -12,13 +12,7 @@ class RidesController < ApplicationController
       @resa_acceptee += ride.bookings.where(status: "acceptée").count
     end
 
-    # for mapbox
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
+    
   end
 
   def search
@@ -43,6 +37,7 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
+    # for mapbox
     @markers =
       [{
         lat: @ride.latitude,
