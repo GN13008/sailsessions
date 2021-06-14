@@ -2,6 +2,7 @@ class Ride < ApplicationRecord
   belongs_to :user
   belongs_to :sport
   has_many :bookings
+  has_one :chatroom
 
   geocoded_by :spot
   after_validation :geocode, if: :will_save_change_to_spot?

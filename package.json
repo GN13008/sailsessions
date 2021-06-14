@@ -2,12 +2,14 @@
   "name": "sailsessions",
   "private": true,
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.1.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "bootstrap": "4.6",
     "jquery": "^3.6.0",
+    "places.js": "^1.19.0",
     "mapbox-gl": "^2.3.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
