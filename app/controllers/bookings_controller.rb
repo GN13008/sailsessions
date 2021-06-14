@@ -26,27 +26,14 @@ class BookingsController < ApplicationController
   #   end
   end
 
-  def accept
-    @ride = ride.find(params[:ride_id])
+  def status
     @booking = Booking.find(params[:id])
-    @booking.update(status: "accept")
+    @booking.status = params[:status]
 
     if @booking.save
-      redirect_to @booking.ride
+      redirect_to rides_path
     else
-      render @ride
-    end
-  end
-
-  def decline
-    @ride = Ride.find(params[:ride_id])
-    @booking = Booking.find(params[:id])
-    @booking.update(status: "decline")
-
-    if @booking.save
-      redirect_to @booking.ride
-    else
-      render @ride
+      render rides_path
     end
   end
 

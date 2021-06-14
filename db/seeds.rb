@@ -1,11 +1,15 @@
 require 'open-uri'
 puts "----- Cleaning Database / Users & Offers -----"
 
-User.destroy_all
-Sport.destroy_all
 Booking.destroy_all
-UserSport.destroy_all
 Ride.destroy_all
+UserSport.destroy_all
+Sport.destroy_all
+User.destroy_all
+
+
+
+
 
 
 puts "-------- Seeding in process --------"
@@ -50,7 +54,7 @@ ride1.sport = kite
 ride1.save
 puts "#{ride1.title} is created"
 
-ride2 = Ride.new(title: "Une journée Calanque", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
+ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
 ride2.user = pierre
 ride2.sport = surf
 ride2.save
@@ -100,5 +104,17 @@ booking3.user = pierre
 booking3.ride = ride1
 booking3.save
 puts "Pierre reserve la session kite de Guillaume"
+
+booking4 = Booking.new()
+booking4.user = flo
+booking4.ride = ride1
+booking4.save
+puts "Flo reserve la session kite de Guillaume"
+
+booking5 = Booking.new()
+booking5.user = ibra
+booking5.ride = ride2
+booking5.save
+puts "ibra reserve la session surf de Pierre"
 
 puts "booking are done"

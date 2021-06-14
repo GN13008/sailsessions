@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   get "/search", to: "rides#search", as: :search
   patch "/rides/:id", to: "rides#cancel", as: :cancel_ride
 
-  patch "/bookings/:id", to: "bookings#accept", as: :accept_booking
-  patch "/bookings/:id", to: "bookings#decline", as: :decline_booking
+  patch "/bookings/:id", to: "bookings#status", as: :change_status_booking
 
   get "/components", to: "pages#components", as: :components
 end
