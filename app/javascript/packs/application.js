@@ -35,3 +35,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

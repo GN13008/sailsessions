@@ -43,7 +43,7 @@
                                             class: 'btn btn-flat background-grey-color' %>
 
                                         <%= link_to "Accepter",
-                                            change_status_booking_path(booking,status:"acceptée"),
+                                            change_status_booking_path(booking,status:"acceptée", nb: 1),
                                             method: :patch,
                                             data: { },
                                             class: 'btn btn-flat background-accent-color' %>
