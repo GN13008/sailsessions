@@ -19,7 +19,7 @@
     <div class="search-form-control form-group form-inline center-search">
       <%= form_with url: "/search", method: :get, local: true do |form| %>
         <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
-        <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom" %>
+        <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom" %>
         <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
        <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
       <% end %>
