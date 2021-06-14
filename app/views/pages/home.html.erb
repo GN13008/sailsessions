@@ -1,3 +1,7 @@
+<head>
+  <title>SailSession | Sport Nautiques</title>
+  <meta name="description" content="Redécouvrez avec SailSession le plaisir de partager votre passion pour les sport nautiques.">
+</head>
 <div class="home-banner">
       <div class="container pl-4">
         <div class="img-container">
@@ -17,13 +21,15 @@
 <div class="container">
   <h2 class="pt-3 view-headline text-center">Cherche une session de sport nautique près de chez toi!</h2>
     <div class="search-form-control form-group form-inline center-search">
-      <%= form_with url: "/search", method: :get, local: true do |form| %>
-        <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
-        <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom" %>
-        <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
-       <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
+      <%= form_with url: "/search", method: :get, local: true, :remote => true  do |form| %>
+       <!-- Dropdown -->
+      <%= form.select :sport, Sport.all.map {|sport| sport.name}, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
+      <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom", id:"from-input"%>
+      <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
+        <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
       <% end %>
     </div>
+
 
 <!-- Carroussel Images -->
   <h2 class="pt-3 view-headline">Ta session par sport</h2>
