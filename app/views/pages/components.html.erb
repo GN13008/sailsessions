@@ -145,6 +145,44 @@
             </div>
               <p class="padding-text">Kelly Slater (né Robert Kelly Slater le 11 février 1972 à Cocoa Beach en Floride) est un surfeur professionnel américain. Il détient onze titres de champion du monde et plus de cinquante victoires sur le circuit d'élite ce qui constitue un record.</p>
             </div>
+
+      <!-- Search Form  -->
+      <div class="container">
+        <h2 class="pt-3 view-headline text-center">Cherche une session de sport nautique près de chez toi!</h2>
+          <div class="search-form-control form-group form-inline center-search">
+            <%= form_with url: "/search", method: :get, local: true do |form| %>
+              <%= form.text_field :sport, placeholder: "Choisis ton sport", class: "form-control little-margin-bottom" %>
+              <%= form.text_field :depart, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom" %>
+              <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
+             <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
+            <% end %>
+          </div>
+
+      <!-- Search Form with drop down example -->
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#custom">Custom</a>
+          <a href="#support">Support</a>
+          <a href="#tools">Tools</a>
+        </div>
+      </div>
+
+      <!-- Real Search Form with drop down SailSession-->
+      <div class="container">
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Choisis ton sport</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+
+        </div>
+      </div>
+
          </div>
         </div>
     </div>

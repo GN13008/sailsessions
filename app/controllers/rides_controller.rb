@@ -30,6 +30,7 @@ class RidesController < ApplicationController
     #   lng: offer.longitude
     # }
     end
+
   end
 
   def show
