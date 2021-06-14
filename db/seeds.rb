@@ -2,6 +2,8 @@ require 'open-uri'
 puts "----- Cleaning Database / Users & Offers -----"
 
 Booking.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
 Ride.destroy_all
 UserSport.destroy_all
 Sport.destroy_all
@@ -31,8 +33,8 @@ puts "Sports creation finished"
 puts "Creating 4 users"
 
 gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour je m'appelle Guillaume passionné de kitesurf je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
-guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622566275/kgmq5p8plbevum8zdrh8yj7xtjej.jpg")
-gui.photo.attach(io: guiimage, filename: 'v1622566275/kgmq5p8plbevum8zdrh8yj7xtjej.jpg')
+guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg")
+gui.photo.attach(io: guiimage, filename: 'v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg')
 
 ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "salut moi c'est Ibrahim j'adore rencontrer de nouvelles personnes, je suis un grand fan de paddle cela me permet de voir des paysages extraordinaires alors pourquoi pas le faire à plusieurs" , name: "Ibrahim", age: "25ans")
 ibraimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg")
