@@ -11,6 +11,14 @@ class RidesController < ApplicationController
       @resa_en_att += ride.bookings.where(status: "en attente").count
       @resa_acceptee += ride.bookings.where(status: "acceptée").count
     end
+
+    # for mapbox
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def search

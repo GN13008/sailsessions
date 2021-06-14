@@ -1,5 +1,6 @@
 
 <div class="container">
+
   <a href="javascript:history.back()" class="position-top-left">
     <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
   </a>
@@ -26,6 +27,11 @@
     <!-- Informations complémentaires sur la session -->
     <div class="flex-fill pl-3 pt-2">
       <h3 class="view-headline">Spot: <%= @ride.spot %></h3>
+      <div id="map"
+        style="width: 100%; height: 200px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
       <h3 class="view-headline">Faites connaissance avec : </h3>
 
   <!-- Card Contact Component -->

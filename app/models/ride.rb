@@ -3,6 +3,8 @@ class Ride < ApplicationRecord
   belongs_to :sport
   has_many :bookings
 
+  geocoded_by :spot
+  after_validation :geocode, if: :will_save_change_to_spot?
 
   validates :from, :spot, :start_time, :end_time, :date, presence: true
 
