@@ -1,11 +1,15 @@
 require 'open-uri'
 puts "----- Cleaning Database / Users & Offers -----"
 
-User.destroy_all
-Sport.destroy_all
 Booking.destroy_all
-UserSport.destroy_all
 Ride.destroy_all
+UserSport.destroy_all
+Sport.destroy_all
+User.destroy_all
+
+
+
+
 
 
 puts "-------- Seeding in process --------"
