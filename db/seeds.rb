@@ -49,9 +49,9 @@ puts "Users are created"
 puts "Creating 6 rides"
 
 ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
-ride1.user = gui
-ride1.sport = kite
-ride1.save
+ride1.user_id = gui.id
+ride1.sport_id = kite.id
+ride1.save!
 puts "#{ride1.title} is created"
 
 ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
