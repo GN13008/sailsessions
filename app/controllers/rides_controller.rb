@@ -2,8 +2,23 @@ class RidesController < ApplicationController
   def index
     #les réservations que je fait
     @mybookings = current_user.bookings
+
     #les sessions que j'ai crées
     @myrides = current_user.rides
+    @resa_en_att = 0
+    @resa_acceptee = 0
+    @myrides.each do |ride|
+      @resa_en_att += ride.bookings.where(status: "en attente").count
+      @resa_acceptee += ride.bookings.where(status: "acceptée").count
+    end
+
+    # for mapbox
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def search
@@ -23,6 +38,7 @@ class RidesController < ApplicationController
     if params[:date].present?
       @rides = @rides.where(date: params[:date])
     end
+
   end
 
   def show
