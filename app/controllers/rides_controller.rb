@@ -11,37 +11,44 @@ class RidesController < ApplicationController
       @resa_en_att += ride.bookings.where(status: "en attente").count
       @resa_acceptee += ride.bookings.where(status: "acceptée").count
     end
+
+    # for mapbox
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def search
     @rides = Ride.all
-    @sport = "tous sports confondus"
+    @sport = params[:sport]
     @description = "Choisis une session, accède aux meilleurs spots et profites un max !"
-    @from = params[:depart]
+    @from = params[:from]
     @date = params[:date]
-    if params[:sport].present? # && params[:when].present?
-      @rides = Ride.search_by_sport(params[:sport])
-      @sport = "de #{params[:sport]}"
-    #   @offers = Offer.search_by_localisation(params[:where])
-    #   @offers = @offers.search_by_disponibility(params[:when])
-    # elsif params[:when].present?
-    #   @offers = Offer.search_by_disponibility(params[:when])
-    # elsif params[:where].present?
-    #   @offers = Offer.search_by_localisation(params[:where])
-    # else
-    #   @offers = Offer.all
-    # end
-    # @markers = @offers.geocoded.map do |offer|
-    # {
-    #   lat: offer.latitude,
-    #   lng: offer.longitude
-    # }
+# 1 seul champ est renseigné
+    if params[:sport].present?
+      sport_id = Sport.where(name: params[:sport]).first.id
+      @rides = @rides.where(sport_id: sport_id)
+    end
+    if params[:from].present?
+      @rides = @rides.where(from: params[:from])
+    end
+    if params[:date].present?
+      @rides = @rides.where(date: params[:date])
     end
 
   end
 
   def show
     @ride = Ride.find(params[:id])
+    @markers = @rides.geocoded.map do |offer|
+    {
+      lat: offer.latitude,
+      lng: offer.longitude
+    }
+    end
   end
 
   def new
@@ -51,6 +58,10 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
+    chatroom = Chatroom.new
+    chatroom.name = @ride.title
+    chatroom.ride = @ride
+    flash.alert = "Problème de chatroom" unless chatroom.save
     if @ride.save
       redirect_to @ride, notice: "Votre session vient d'être créée"
     else

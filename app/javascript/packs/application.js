@@ -25,10 +25,22 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+
 import { initAutocomplete } from '../plugins/init_autocomplete';
+
+// import { initSelect2 } from '../components/init_select2';
+import { initChatroomCable } from "../channels/chatroom_channel";
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initAutocomplete()
+  initAutocomplete();
+  initChatroomCable();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

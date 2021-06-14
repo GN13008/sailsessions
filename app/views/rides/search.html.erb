@@ -4,7 +4,7 @@
 </head>
 
 <div class="container">
-  <h1 class="pt-4">Il y a <%= @rides.count %> sessions <%= @sport %> </h1>
+  <h1 class="pt-4">Il y a <%= @rides.count %> sessions <%= @sport if params[:sport].present? %></h1>
   <h2><%= @description %></h2>
   <hr>
   <% @rides.each do |ride| %>
