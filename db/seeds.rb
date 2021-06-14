@@ -49,39 +49,45 @@ puts "Users are created"
 puts "Creating 6 rides"
 
 ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
-ride1.user_id = gui.id
-ride1.sport_id = kite.id
-ride1.save!
+ride1.user = gui
+ride1.sport = kite
+ride1.save
+Chatroom.create(name: ride1.title, ride_id: ride1.id)
 puts "#{ride1.title} is created"
 
 ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
 ride2.user = pierre
 ride2.sport = surf
 ride2.save
+Chatroom.create(name: ride2.title, ride_id: ride2.id)
 puts "#{ride2.title} is created"
 
 ride3 = Ride.new(title: "Session de Deux Jours", from: "Aix", spot: "six-four", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
 ride3.user = pierre
 ride3.sport = sup
 ride3.save
+Chatroom.create(name: ride3.title, ride_id: ride3.id)
 puts "#{ride3.title} is created"
 
 ride4 = Ride.new(title: "Briser la vague à Nice", from: "Aix", spot: "Aix", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3 )
 ride4.user = ibra
 ride4.sport = wake
 ride4.save
+Chatroom.create(name: ride4.title, ride_id: ride4.id)
 puts "#{ride4.title} is created"
 
 ride5 = Ride.new(title: "Beauduc pour la vie", from: "Marseille", spot: "Beauduc", start_time: "06:00", end_time: "23:00", date: "20/06/2021", nb_of_place: 3, description: "Dimanche y'a cartouche à beauduc, GO envoyer du lourd les gars" )
 ride5.user = ibra
 ride5.sport = kite
 ride5.save
+Chatroom.create(name: ride5.title, ride_id: ride5.id)
 puts "#{ride5.title} is created"
 
 ride6 = Ride.new(title: "Balade dans les calanques", from: "Marseille", spot: "Marseille", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3, description: "Je partage des bon spots puis on se boit une bière ?" )
 ride6.user = flo
 ride6.sport = sup
 ride6.save
+Chatroom.create(name: ride6.title, ride_id: ride6.id)
 puts "#{ride6.title} is created"
 
 puts "Sessions are created"
