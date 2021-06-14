@@ -20,8 +20,7 @@ sup = Sport.create!(name: "Stand up paddle", description: "Pour une session réu
 wind = Sport.create!(name: "Windsurf", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335139/wind_zul21x.jpg")
 kite = Sport.create!(name: "Kitesurf", description: " Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335140/kite_q0dcc5.jpg")
 wake = Sport.create!(name: "Wakeboard", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335116/wake_qqsr4x.jpg")
-motomarine = Sport.create!(name: "Motomarine", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Une motomarine, aussi nommée scooter des mers, moto aquatique ou véhicule nautique à moteur (VNM, selon la terminologie ministérielle en France), est un petit véhicule de loisir nautique que l'on chevauche et qui est propulsé par un hydrojet, lui-même actionné par un moteur à combustion. Souvent, cet engin est désigné par antonomase par les termes jet ski ou sea-doo, deux marques commerciales de motomarines."
-  image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/motoski_tw7jn9.jpg")
+motomarine = Sport.create!(name: "Motomarine", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Une motomarine, aussi nommée scooter des mers, moto aquatique ou véhicule nautique à moteur (VNM, selon la terminologie ministérielle en France), est un petit véhicule de loisir nautique que l'on chevauche et qui est propulsé par un hydrojet, lui-même actionné par un moteur à combustion. Souvent, cet engin est désigné par antonomase par les termes jet ski ou sea-doo, deux marques commerciales de motomarines.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/motoski_tw7jn9.jpg")
 flyboard = Sport.create!(name:"Flyboard", description: "Le Flyboard est un type de jetpack nautique raccordé à une motomarine (Jet ski) qui lui fournit de l'eau sous pression.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/520px-Flyboard_Lesson_-_Merritt_Island_FL_gd21nn.jpg")
 skimboard = Sport.create!(name:"Skimboard", description: "Le skimboard ou la planche de plage1 est un sport de glisse qui consiste à surfer sur une vague en se lançant de la plage. Le nom vient du verbe anglais to skim (écumer, écrémer, frôler) et de board (planche), comme dans surfboard (planche de surf), un skimboard est donc littéralement une « planche à frôler/écumer » car elle plane au ras de l'eau.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/skimboard_p7q0dn.jpg")
 aviron = Sport.create!(name:"Aviron", description: "L'aviron fait partie de la famille des sports nautiques. C'est un sport olympique depuis la création des Jeux olympiques modernes en 1896 sous l'impulsion du baron Pierre de Coubertin. Ce sport consiste à propulser une forme, étroite et allongée, de traînière à l'aide de rames, également appelées avirons", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/aviron_ck0zic.jpg")
@@ -48,37 +47,37 @@ pierre.photo.attach(io: pierreimage, filename: 'v1622630654/p57fyzk3qxk1y0qr25cf
 puts "Users are created"
 puts "Creating 6 rides"
 
-ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "l'almanarre", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
+ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
 ride1.user_id = gui.id
 ride1.sport_id = kite.id
 ride1.save!
 puts "#{ride1.title} is created"
 
-ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "six-four", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
+ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
 ride2.user = pierre
 ride2.sport = surf
 ride2.save
 puts "#{ride2.title} is created"
 
-ride3 = Ride.new(title: "Session de Deux Jours", from: "Aix", spot: "six-four", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
+ride3 = Ride.new(title: "Session de Deux Jours", from: "Aix", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
 ride3.user = pierre
 ride3.sport = sup
 ride3.save
 puts "#{ride3.title} is created"
 
-ride4 = Ride.new(title: "Briser la vague à Nice", from: "Aix", spot: "Aix", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3 )
+ride4 = Ride.new(title: "Briser la vague à Nice", from: "Aix", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3 )
 ride4.user = ibra
 ride4.sport = wake
 ride4.save
 puts "#{ride4.title} is created"
 
-ride5 = Ride.new(title: "Beauduc pour la vie", from: "Marseille", spot: "Beauduc", start_time: "06:00", end_time: "23:00", date: "20/06/2021", nb_of_place: 3, description: "Dimanche y'a cartouche à beauduc, GO envoyer du lourd les gars" )
+ride5 = Ride.new(title: "Beauduc pour la vie", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "06:00", end_time: "23:00", date: "20/06/2021", nb_of_place: 3, description: "Dimanche y'a cartouche à beauduc, GO envoyer du lourd les gars" )
 ride5.user = ibra
 ride5.sport = kite
 ride5.save
 puts "#{ride5.title} is created"
 
-ride6 = Ride.new(title: "Balade dans les calanques", from: "Marseille", spot: "Marseille", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3, description: "Je partage des bon spots puis on se boit une bière ?" )
+ride6 = Ride.new(title: "Balade dans les calanques", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3, description: "Je partage des bon spots puis on se boit une bière ?" )
 ride6.user = flo
 ride6.sport = sup
 ride6.save

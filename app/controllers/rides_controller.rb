@@ -43,12 +43,11 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
-    @markers = @rides.geocoded.map do |offer|
-    {
-      lat: offer.latitude,
-      lng: offer.longitude
-    }
-    end
+    @markers =
+      [{
+        lat: @ride.latitude,
+        lng: @ride.longitude
+      }]
   end
 
   def new
