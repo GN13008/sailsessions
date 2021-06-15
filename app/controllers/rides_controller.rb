@@ -42,7 +42,9 @@ class RidesController < ApplicationController
     @markers =
       [{
         lat: @ride.latitude,
-        lng: @ride.longitude
+        lng: @ride.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { ride: @ride }),
+        image_url: helpers.asset_url('logo-sail-sessions.png')
       }]
   end
 
