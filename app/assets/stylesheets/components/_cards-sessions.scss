@@ -20,6 +20,10 @@
     }
 }
 
+.ride_date_card {
+  padding-top: 4px;
+}
+
 // grande card de notification
 .card-mes-session {
     background-color: $secondary-color;
@@ -33,7 +37,7 @@
     p, h1, h2, h3 {
         color: $text-color;
     }
-    
+
     .top-card-mes-session {
         display: flex;
         justify-content: space-between;
