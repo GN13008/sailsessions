@@ -10,10 +10,6 @@ Sport.destroy_all
 User.destroy_all
 
 
-
-
-
-
 puts "-------- Seeding in process --------"
 
 puts "Creating 11 sports"
@@ -22,19 +18,19 @@ sup = Sport.create!(name: "Stand up paddle", description: "Pour une session réu
 wind = Sport.create!(name: "Windsurf", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335139/wind_zul21x.jpg")
 kite = Sport.create!(name: "Kitesurf", description: " Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335140/kite_q0dcc5.jpg")
 wake = Sport.create!(name: "Wakeboard", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335116/wake_qqsr4x.jpg")
-motomarine = Sport.create!(name: "Motomarine", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Une motomarine, aussi nommée scooter des mers, moto aquatique ou véhicule nautique à moteur (VNM, selon la terminologie ministérielle en France), est un petit véhicule de loisir nautique que l'on chevauche et qui est propulsé par un hydrojet, lui-même actionné par un moteur à combustion. Souvent, cet engin est désigné par antonomase par les termes jet ski ou sea-doo, deux marques commerciales de motomarines.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/motoski_tw7jn9.jpg")
-flyboard = Sport.create!(name:"Flyboard", description: "Le Flyboard est un type de jetpack nautique raccordé à une motomarine (Jet ski) qui lui fournit de l'eau sous pression.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/520px-Flyboard_Lesson_-_Merritt_Island_FL_gd21nn.jpg")
+motomarine = Sport.create!(name: "Jet ski", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Un jet ski, aussi nommée scooter des mers, moto aquatique ou véhicule nautique à moteur (VNM, selon la terminologie ministérielle en France), est un petit véhicule de loisir nautique que l'on chevauche et qui est propulsé par un hydrojet, lui-même actionné par un moteur à combustion. Souvent, cet engin est désigné par antonomase par les termes jet ski ou sea-doo.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/motoski_tw7jn9.jpg")
+flyboard = Sport.create!(name:"Flyboard", description: "Le Flyboard est un type de jetpack nautique raccordé à un Jet ski qui lui fournit de l'eau sous pression.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/520px-Flyboard_Lesson_-_Merritt_Island_FL_gd21nn.jpg")
 skimboard = Sport.create!(name:"Skimboard", description: "Le skimboard ou la planche de plage1 est un sport de glisse qui consiste à surfer sur une vague en se lançant de la plage. Le nom vient du verbe anglais to skim (écumer, écrémer, frôler) et de board (planche), comme dans surfboard (planche de surf), un skimboard est donc littéralement une « planche à frôler/écumer » car elle plane au ras de l'eau.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/skimboard_p7q0dn.jpg")
 aviron = Sport.create!(name:"Aviron", description: "L'aviron fait partie de la famille des sports nautiques. C'est un sport olympique depuis la création des Jeux olympiques modernes en 1896 sous l'impulsion du baron Pierre de Coubertin. Ce sport consiste à propulser une forme, étroite et allongée, de traînière à l'aide de rames, également appelées avirons", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/aviron_ck0zic.jpg")
 bateau_dragon = Sport.create!(name:"Bateau-dragon", description: "Le bateau-dragon est un sport nautique d’équipe qui utilise un type de pirogue appelé aussi bateau-dragon. Les bateaux-dragons de classe internationale qui sont plus petits que les modèles traditionnels pour des raisons de coûts de transports, embarquent 22 personnes dont 20 pagayeurs.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/560px-Dragon_boat_-_Cantonese_e8o5wq.jpg")
 canoe = Sport.create!(name:"Canoë-kayak", description: "Le canoë-kayak est une activité physique de loisir ou sportive, pratiquée avec des embarcations propulsées à la pagaie ou la main, notamment le canoë, le kayak, le raft, ou la pirogue. Cette activité est également désignée par « sports de pagaie ».", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/440px-Canoe-kayak-marathon_hfksip.jpg")
 
 puts "Sports creation finished"
-puts "Creating 4 users"
+puts "Creating 6 users"
 
 gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour, je m'appelle Guillaume passionné de kitesurf, je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
-guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg")
-gui.photo.attach(io: guiimage, filename: 'v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg')
+guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623760973/profile_qautnw.jpg")
+gui.photo.attach(io: guiimage, filename: 'v1623760973/profile_qautnw.jpg')
 
 ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "Salut moi c'est Ibrahim j'adore rencontrer de nouvelles personnes, je suis un grand fan de paddle cela me permet de voir des paysages extraordinaires alors pourquoi pas le faire à plusieurs" , name: "Ibrahim", age: "25ans")
 ibraimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg")
@@ -43,8 +39,8 @@ ibra.photo.attach(io: ibraimage, filename: 'v1622810359/1fqi4b3snnhqeb44jisl9rdt
 flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "Bonjour, je me présente Florent, professionnel de windsurf j'aimerais rencontrer d'autres passionnés qui ont un bon niveau pour faire des grosses sessions et partager mon savoir-faire" , name: "Florent", age: "32ans")
 
 pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre, je pratique le surf depuis 5 ans environ. Je surf tout le temps en solitaire et j'en ai un peu marre du coup je suis ici pour faire pleins de rencontres afin de partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
-pierreimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622630654/p57fyzk3qxk1y0qr25cfxdy1lo8l.jpg")
-pierre.photo.attach(io: pierreimage, filename: 'v1622630654/p57fyzk3qxk1y0qr25cfxdy1lo8l.jpg')
+pierreimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg")
+pierre.photo.attach(io: pierreimage, filename: 'v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg')
 
 thomas = User.create!(email: "thomas@gmail.com", password: "password", bio: "Bonjour, Thomas au clavier! Je suis débutant en surf et j’aimerais rencontrer une communauté pour partager diverses expériences" , name: "Thomas", age: "35ans")
 thomasimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg")
@@ -56,7 +52,7 @@ paul.photo.attach(io: paulimage, filename: 'v1623748340/T02NE0241-UP3G6NUJY-67d3
 
 
 puts "Users are created"
-puts "Creating 6 rides"
+puts "Creating 15 rides"
 
 
 ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "18 Route du Sel, Hyères", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
@@ -73,7 +69,7 @@ ride2.save
 Chatroom.create(name: ride2.title, ride_id: ride2.id)
 puts "#{ride2.title} is created"
 
-ride3 = Ride.new(title: "Session de Deux Jours", from: "Aix", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
+ride3 = Ride.new(title: "Session Paddle afterwork", from: "Aix", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "17/06/2021", nb_of_place: 2 )
 ride3.user = pierre
 ride3.sport = sup
 ride3.save
@@ -170,16 +166,16 @@ puts "Sessions are created"
 puts "Creating 3 bookings"
 
 booking1 = Booking.new()
-booking1.user = gui
+booking1.user = paul
 booking1.ride = ride3
 booking1.save
-puts "Guillaume reserve la session sup de Pierre"
+puts "Paul reserve la session sup de Pierre"
 
 booking2 = Booking.new()
-booking2.user = gui
+booking2.user = ibra
 booking2.ride = ride2
 booking2.save
-puts "Guillaume reserve la session surf de Pierre"
+puts "Ibra reserve la session surf de Pierre"
 
 booking3 = Booking.new()
 booking3.user = pierre
@@ -197,6 +193,6 @@ booking5 = Booking.new()
 booking5.user = ibra
 booking5.ride = ride2
 booking5.save
-puts "ibra reserve la session surf de Pierre"
+puts "Ibra reserve la session surf de Pierre"
 
 puts "booking are done"
