@@ -32,32 +32,41 @@ canoe = Sport.create!(name:"Canoë-kayak", description: "Le canoë-kayak est une
 puts "Sports creation finished"
 puts "Creating 4 users"
 
-gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour je m'appelle Guillaume passionné de kitesurf je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
+gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour, je m'appelle Guillaume passionné de kitesurf, je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
 guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg")
 gui.photo.attach(io: guiimage, filename: 'v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg')
 
-ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "salut moi c'est Ibrahim j'adore rencontrer de nouvelles personnes, je suis un grand fan de paddle cela me permet de voir des paysages extraordinaires alors pourquoi pas le faire à plusieurs" , name: "Ibrahim", age: "25ans")
+ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "Salut moi c'est Ibrahim j'adore rencontrer de nouvelles personnes, je suis un grand fan de paddle cela me permet de voir des paysages extraordinaires alors pourquoi pas le faire à plusieurs" , name: "Ibrahim", age: "25ans")
 ibraimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg")
 ibra.photo.attach(io: ibraimage, filename: 'v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg')
 
-flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "bonjour je me présente Florent je suis professionnelle de windsurf j'aimerais trouver des gens qui ont un bon niveau pour faire des grosses sessions et partager mon savoir-faire et mes skills" , name: "Florent", age: "32ans")
+flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "Bonjour, je me présente Florent, professionnel de windsurf j'aimerais rencontrer d'autres passionnés qui ont un bon niveau pour faire des grosses sessions et partager mon savoir-faire" , name: "Florent", age: "32ans")
 
-pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre je pratique le surf depuis 5 ans environ. Je surf tout le temps en solitaire et j'en ai un peu marre du coup je suis ici pour faire pleins de rencontre partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
+pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre, je pratique le surf depuis 5 ans environ. Je surf tout le temps en solitaire et j'en ai un peu marre du coup je suis ici pour faire pleins de rencontres afin de partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
 pierreimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622630654/p57fyzk3qxk1y0qr25cfxdy1lo8l.jpg")
 pierre.photo.attach(io: pierreimage, filename: 'v1622630654/p57fyzk3qxk1y0qr25cfxdy1lo8l.jpg')
+
+thomas = User.create!(email: "thomas@gmail.com", password: "password", bio: "Bonjour, Thomas au clavier! Je suis débutant en surf et j’aimerais rencontrer une communauté pour partager diverses expériences" , name: "Thomas", age: "35ans")
+thomasimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg")
+thomas.photo.attach(io: thomasimage, filename: 'v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg')
+
+paul = User.create!(email: "paul@gmail.com", password: "password", bio: "Bonjour moi c'est Paul je pratique le kitesurf et j’aimerais trouver une communauté pour partager de bons moments" , name: "Paul", age: "28ans")
+paulimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748340/T02NE0241-UP3G6NUJY-67d30e168b0a-512_kd72af.jpg")
+paul.photo.attach(io: paulimage, filename: 'v1623748340/T02NE0241-UP3G6NUJY-67d30e168b0a-512_kd72af.jpg')
+
 
 puts "Users are created"
 puts "Creating 6 rides"
 
 
-ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
+ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "18 Route du Sel, Hyères", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
 ride1.user = gui
 ride1.sport = kite
 ride1.save
 Chatroom.create(name: ride1.title, ride_id: ride1.id)
 puts "#{ride1.title} is created"
 
-ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
+ride2 = Ride.new(title: "Grosse houle en approche", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "18 Route du Sel, Hyères", start_time: "9:00", end_time: "17:00", date: "16/06/2021", nb_of_place: 2 )
 ride2.user = pierre
 ride2.sport = surf
 ride2.save
@@ -78,19 +87,84 @@ ride4.save
 Chatroom.create(name: ride4.title, ride_id: ride4.id)
 puts "#{ride4.title} is created"
 
-ride5 = Ride.new(title: "Beauduc pour la vie", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "06:00", end_time: "23:00", date: "20/06/2021", nb_of_place: 3, description: "Dimanche y'a cartouche à beauduc, GO envoyer du lourd les gars" )
+ride5 = Ride.new(title: "Beauduc pour la vie", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "18 Route du Sel, Hyères", start_time: "06:00", end_time: "23:00", date: "20/06/2021", nb_of_place: 3, description: "Dimanche y'a cartouche à beauduc, GO envoyer du lourd les gars" )
 ride5.user = ibra
 ride5.sport = kite
 ride5.save
 Chatroom.create(name: ride5.title, ride_id: ride5.id)
 puts "#{ride5.title} is created"
 
-ride6 = Ride.new(title: "Balade dans les calanques", from: "Marseille", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3, description: "Je partage des bon spots puis on se boit une bière ?" )
+ride6 = Ride.new(title: "Balade dans les calanques", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "18 Route du Sel, Hyères", start_time: "18:00", end_time: "20:00", date: "20/06/2021", nb_of_place: 3, description: "Je partage des bon spots puis on se boit une bière ?" )
 ride6.user = flo
 ride6.sport = sup
 ride6.save
 Chatroom.create(name: ride6.title, ride_id: ride6.id)
 puts "#{ride6.title} is created"
+
+ride7 = Ride.new(title: "Session au Brusc", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "Plage du Cros", start_time: "08:00", end_time: "18:00", date: "17/07/2021", nb_of_place: 2)
+ride7.user = paul
+ride7.sport = kite
+ride7.save
+Chatroom.create(name: ride7.title, ride_id: ride7.id)
+puts "#{ride7.title} is created"
+
+ride8 = Ride.new(title: "Vers un spot secret", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "283 Avenue des Calanques, 13600 La Ciotat", start_time: "10:00", end_time: "20:00", date: "03/07/2021", nb_of_place: 5)
+ride8.user = thomas
+ride8.sport = kite
+ride8.save
+Chatroom.create(name: ride8.title, ride_id: ride8.id)
+puts "#{ride8.title} is created"
+
+ride9 = Ride.new(title: "Session de kitesurf", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "23 Corniche du Cros, 83140 Six-Fours-les-Plages", start_time: "10:00", end_time: "16:00", date: "03/07/2021", nb_of_place: 5)
+ride9.user = pierre
+ride9.sport = kite
+ride9.save
+Chatroom.create(name: ride9.title, ride_id: ride9.id)
+puts "#{ride9.title} is created"
+
+ride10 = Ride.new(title: "Session de surf", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "Avenue du Port, 83270 Saint-Cyr-sur-Mer", start_time: "06:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 3)
+ride10.user = pierre
+ride10.sport = surf
+ride10.save
+Chatroom.create(name: ride10.title, ride_id: ride10.id)
+puts "#{ride10.title} is created"
+
+ride11 = Ride.new(title: "Session spot secret", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "Avenue du Port, 83270 Saint-Cyr-sur-Mer", start_time: "06:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 3)
+ride11.user = flo
+ride11.sport = surf
+ride11.save
+Chatroom.create(name: ride11.title, ride_id: ride11.id)
+puts "#{ride11.title} is created"
+
+ride12 = Ride.new(title: "Session à rouet", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "Unnamed Road, 13620 Carry-le-Rouet", start_time: "12:00", end_time: "19:00", date: "25/06/2021", nb_of_place: 4)
+ride12.user = gui
+ride12.sport = surf
+ride12.save
+Chatroom.create(name: ride12.title, ride_id: ride12.id)
+puts "#{ride12.title} is created"
+
+ride13 = Ride.new(title: "Session à Bandol", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "5 Rue Raimu, 83150 Bandol", start_time: "10:00", end_time: "15:00", date: "25/06/2021", nb_of_place: 4)
+ride13.user = gui
+ride13.sport = sup
+ride13.save
+Chatroom.create(name: ride13.title, ride_id: ride13.id)
+puts "#{ride13.title} is created"
+
+ride14 = Ride.new(title: "Session à port d'alon", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "Le Port d'Alon, 83270 Saint-Cyr-sur-Mer", start_time: "09:00", end_time: "12:00", date: "03/07/2021", nb_of_place: 4)
+ride14.user = ibra
+ride14.sport = sup
+ride14.save
+Chatroom.create(name: ride14.title, ride_id: ride14.id)
+puts "#{ride14.title} is created"
+
+ride15 = Ride.new(title: "Session Relax", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "13230 Port-Saint-Louis-du-Rhône", start_time: "09:00", end_time: "16:00", date: "04/07/2021", nb_of_place: 4)
+ride15.user = paul
+ride15.sport = sup
+ride15.save
+Chatroom.create(name: ride15.title, ride_id: ride15.id)
+puts "#{ride15.title} is created"
+
+
 
 puts "Sessions are created"
 puts "Creating 3 bookings"
