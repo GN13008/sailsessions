@@ -2,6 +2,7 @@
   <title>Toutes nos sessions | SailSessions</title>
   <meta name="description" content="Parcourez l'ensemble des sessions nautiques disponibles sur SailSession. Kite, Windsurf, Surf et plus méritent d'être partagés.">
 </head>
+<div class="search-banner"></div>
 
 <div class="container">
   <h1 class="pt-4">Il y a <%= @rides.count %> sessions <%= @sport if params[:sport].present? %></h1>
@@ -21,7 +22,7 @@
           <% else %>
             <%= image_tag 'logo-sail-sessions.png', class: "profile-pic" %>
           <% end %>
-          <p><%= ride.date %></p>
+          <p class="ride_date_card"><%= ride.date %></p>
         </div>
       </div>
     <% end %>
@@ -38,7 +39,7 @@
     {class: "form-control little-margin-bottom"} %>
     <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom", id:"from-input"%>
     <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
-      <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
+    <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
     <% end %>
   </div>
 </div>
