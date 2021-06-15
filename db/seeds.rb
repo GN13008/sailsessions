@@ -133,14 +133,14 @@ Chatroom.create(name: ride11.title, ride_id: ride11.id)
 puts "#{ride11.title} is created"
 
 ride12 = Ride.new(title: "Session à rouet", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "Unnamed Road, 13620 Carry-le-Rouet", start_time: "12:00", end_time: "19:00", date: "25/06/2021", nb_of_place: 4)
-ride12.user = gui
+ride12.user = thomas
 ride12.sport = surf
 ride12.save
 Chatroom.create(name: ride12.title, ride_id: ride12.id)
 puts "#{ride12.title} is created"
 
 ride13 = Ride.new(title: "Session à Bandol", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "5 Rue Raimu, 83150 Bandol", start_time: "10:00", end_time: "15:00", date: "25/06/2021", nb_of_place: 4)
-ride13.user = gui
+ride13.user = paul
 ride13.sport = sup
 ride13.save
 Chatroom.create(name: ride13.title, ride_id: ride13.id)
