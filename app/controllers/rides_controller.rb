@@ -23,14 +23,20 @@ class RidesController < ApplicationController
     @date = params[:date]
 # 1 seul champ est renseigné
     if params[:sport].present?
-      sport_id = Sport.where(name: params[:sport]).first.id
-      @rides = @rides.where(sport_id: sport_id)
+      @sport_id = Sport.where(name: params[:sport]).first.id
+      @rides = @rides.where(sport_id: @sport_id)
     end
     if params[:from].present?
       @rides = @rides.where(from: params[:from])
     end
     if params[:date].present?
       @rides = @rides.where(date: params[:date])
+    end
+    @rides_count = @rides.count
+    @rides.each do |ride|
+      if  ride.user == current_user
+        @rides_count -= 1 
+      end
     end
 
   end
