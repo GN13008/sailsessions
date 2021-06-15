@@ -4,17 +4,17 @@
   </a>
   <h1 class="">Bienvenue dans la chatroom</h1>
   <h3>Ici tu peux discuter avec les autres riders de tes sessions.</h3>
-  <p>Les bières sont bien prévus ? On a des Gopro chargées ?</p>
+  <p>Les bières sont bien prévues ? On a des Gopro chargées ?</p>
   <p>Allez va organiser tout ca !</p>
   <hr>
-  <h3>Les session ou tu es conducteur :</h3>
+  <h3>Les sessions ou tu es conducteur :</h3>
   <% @myrides.each do |r| %>
     <%= link_to chatroom_path(r.chatroom) do %>
       <div class="card-mes-session booking">
         <div class="top-card-mes-session">
-          <h3 class="titre-margin-top"><%= r.chatroom.name %></h3>
+          <h3 class="mb-0"><%= r.chatroom.name %></h3>
           <div class="right-flex">
-            <p>Date : <%= r.chatroom.ride.date %></p>
+            <p><%= r.departure_date %></p>
           </div>
         </div>
         <div class="bar-white"></div>
@@ -42,9 +42,9 @@
     <%= link_to chatroom_path(b.ride.chatroom) do %>
       <div class="card-mes-session booking">
         <div class="top-card-mes-session">
-          <h3 class="titre-margin-top"><%= b.ride.chatroom.name %></h3>
+          <h3 class="mb-0"><%= b.ride.chatroom.name %></h3>
           <div class="right-flex">
-            <p>Date : <%= b.ride.chatroom.ride.date %></p>
+            <p><%= b.ride.chatroom.ride.departure_date %></p>
           </div>
         </div>
         <div class="bar-white"></div>

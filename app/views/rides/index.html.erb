@@ -32,9 +32,9 @@
                                 <div class="card-middle">
                                     <p>Sport : <%= booking.ride.sport.name %></p>
                                     <p>Spot : <%= booking.ride.spot %></p>
-                                    <p>Date : <%= booking.ride.date %></p>
+                                    <p>Date : <%= booking.ride.departure_date %></p>
                                     <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
-                                    <p>status : <%= booking.status %></p>
+                                    <p>statut : <%= booking.status %></p>
                                     <p class="margin-bottom">N'oublie pas de rapporter : -</p>
                                 </div>
                                 <div class="btn-inline">
@@ -99,9 +99,9 @@
                                     <div class="card-middle">
                                         <p>Sport : <%= ride.sport.name %></p>
                                         <p>Spot : <%= ride.spot %></p>
-                                        <p>Date : <%= ride.date %></p>
+                                        <p>Date : <%= ride.departure_date %></p>
                                         <p>Début : <%= ride.format_hour(ride.start_time) %></p>
-                                        <p>status : acceptée</p>
+                                        <p>statut : acceptée</p>
                                         <p class="margin-bottom">N'oublie pas de rapporter : -</p>
                                     </div>
                                 </div>
@@ -144,9 +144,9 @@
                         <div class="card-middle">
                             <p>Sport : <%= booking.ride.sport.name %></p>
                             <p>Spot : <%= booking.ride.spot %></p>
-                            <p>Date : <%= booking.ride.date %></p>
+                            <p>Date : <%= booking.ride.departure_date %></p>
                             <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
-                            <p>status : <%= booking.status %></p>
+                            <p>statut : <%= booking.status %></p>
                             <p class="margin-bottom">N'oublie pas de rapporter : -</p>
                         </div>
                     </div>
