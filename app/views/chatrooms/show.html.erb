@@ -1,9 +1,16 @@
 <div class="container">
-  <h1># <%= @chatroom.name %></h1>
+  <a href="javascript:history.back()">
+    <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
+  </a>
+  <h1 style="display: flex; justify-content: center;"><%= @chatroom.name %></h1>
+  
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <%= render @chatroom.messages %>  
   </div>
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <% end %>
+
 </div>
+  <div id="form-message-bottom">
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}" %>
+    <% end %>
+  </div>
