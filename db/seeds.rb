@@ -32,7 +32,7 @@ canoe = Sport.create!(name:"Canoë-kayak", description: "Le canoë-kayak est une
 puts "Sports creation finished"
 puts "Creating 4 users"
 
-gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour je m'appelle Guillaume passionné de kitesurf je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
+gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour, je m'appelle Guillaume passionné de kitesurf, je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
 guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg")
 gui.photo.attach(io: guiimage, filename: 'v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg')
 
@@ -40,13 +40,13 @@ ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "Salut m
 ibraimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg")
 ibra.photo.attach(io: ibraimage, filename: 'v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg')
 
-flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "Bonjour je me présente Florent je suis professionnelle de windsurf j'aimerais trouver des gens qui ont un bon niveau pour faire des grosses sessions et partager mon savoir-faire et mes skills" , name: "Florent", age: "32ans")
+flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "Bonjour, je me présente Florent, professionnel de windsurf j'aimerais rencontrer d'autres passionnés qui ont un bon niveau pour faire des grosses sessions et partager mon savoir-faire" , name: "Florent", age: "32ans")
 
-pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre je pratique le surf depuis 5 ans environ. Je surf tout le temps en solitaire et j'en ai un peu marre du coup je suis ici pour faire pleins de rencontre partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
+pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre, je pratique le surf depuis 5 ans environ. Je surf tout le temps en solitaire et j'en ai un peu marre du coup je suis ici pour faire pleins de rencontres afin de partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
 pierreimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622630654/p57fyzk3qxk1y0qr25cfxdy1lo8l.jpg")
 pierre.photo.attach(io: pierreimage, filename: 'v1622630654/p57fyzk3qxk1y0qr25cfxdy1lo8l.jpg')
 
-thomas = User.create!(email: "thomas@gmail.com", password: "password", bio: "Bonjour je me présente Thomas je suis débutant en surf et j’aimerais rencontrer une communauté pour partager diverses expériences" , name: "Thomas", age: "35ans")
+thomas = User.create!(email: "thomas@gmail.com", password: "password", bio: "Bonjour, Thomas au clavier! Je suis débutant en surf et j’aimerais rencontrer une communauté pour partager diverses expériences" , name: "Thomas", age: "35ans")
 thomasimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg")
 thomas.photo.attach(io: thomasimage, filename: 'v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg')
 
