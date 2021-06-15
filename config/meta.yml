@@ -1,0 +1,5 @@
+meta_product_name: "SailSessions"
+meta_title: "SailSessions | Sport Nautiques"
+meta_description: "Redécouvrez avec SailSession le plaisir de partager votre passion pour les sport nautiques. "
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

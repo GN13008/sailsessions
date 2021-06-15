@@ -1,7 +1,8 @@
-<head>
-  <title>Découvre cette session | SailSessions</title>
-  <meta name="description" content="Cette session n'attend plus que vous pour démarrer. Rejoignez la dès maintenant !">
-</head>
+
+<!-- Content for Meta-data -->
+<% content_for :meta_title, "Découvre cette session | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Cette session n'attend plus que vous pour démarrer. Rejoignez la dès maintenant !" %>
+<% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
 <div class="container">
 
   <a href="javascript:history.back()" class="position-top-left">
