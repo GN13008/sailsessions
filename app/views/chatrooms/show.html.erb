@@ -1,11 +1,39 @@
-<div class="container">
+<div class="container" style="padding-bottom: 45px">
   <a href="javascript:history.back()">
     <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
   </a>
   <h1 style="display: flex; justify-content: center;"><%= @chatroom.name %></h1>
   
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <%= render @chatroom.messages %>  
+    <% @chatroom.messages.each do |message| %>  
+      <% if current_user == message.user %>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <%# use a render %>
+          <div class="message-container my-messages" id="message-<%= message.id %>">
+            <div class="my-messages-inside">
+              <i class="author">
+                <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+              </i>
+              <p class="p-white"><%= message.content %></p>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <%# use a render %>
+          <div class="message-container other-messages" id="message-<%= @message.id %>">
+            <div class="other-messages-inside">
+              <i class="author">
+                <span><%= message.user.name %></span>
+                <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+              </i>
+              <p class="p-white"><%= message.content %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
   </div>
 
 </div>
