@@ -38,6 +38,7 @@ class RidesController < ApplicationController
   def show
     @ride = Ride.find(params[:id])
     # for mapbox
+    @booking = Booking.new()
     @markers =
       [{
         lat: @ride.latitude,

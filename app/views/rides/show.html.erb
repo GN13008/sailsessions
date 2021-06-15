@@ -70,21 +70,21 @@
   <div class="container">
     <h2 class="view-headline">Choisis ce que tu apportes</h2>
     <p class="view-headline">Si cette session t'intéresses, alors il ne te reste pus qu'à choisir ce que tu souhaites apporter en échange du covoiturage. N'hésites pas à en discuter avec l'hôte pour trouver un compromis. </p>
-  <!-- Dropdown button -->
+   <!-- Dropdown button -->
     <% if (current_user.id != @ride.user_id) %>
       <div class="dropdown pt-3" id="echange-selector">
-        <select name="choix" class="btn btn-secondary dropdown-toggle" id="dropdown-echange">
-          <option value="">Fais ton choix!</option>
-          <option value="bieres">J’apporte les bières!</option>
-          <option value="pique nique">J’apporte le pique nique!</option>
-          <option value="autre">Je propose à l’hôte quelquechose</option>
-        </select>
+       <%= simple_form_for [@ride, @booking] do |f| %>
+         <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"] %>
+         <div class="sticky-btn">
+          <%= f.submit "Reserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
+         </div>
+       <% end %>
       </div>
     <% end %>
   </div>
   <hr>
   <!-- Reviews Section -->
-  <div class="container">
+  <div class="container custom-padding">
     <div class="card-reviews">
       <div class="card-top">
         <img class="profile-pic" src="https://images.unsplash.com/photo-1600721391715-1c08ac1393ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80" alt="profile">
@@ -119,12 +119,5 @@
     </div>
   </div>
   <!-- Sticky Réserver Button -->
-    <% if (current_user.id != @ride.user_id) %>
-      <div class="sticky-btn">
-          <%= link_to "Réserver",
-          ride_bookings_path(@ride),
-          method: :post,
-          class: 'btn btn-flat background-accent-color margin-top big-btn link-to-h3' %>
-      </div>
-    <% end %>
+   
 </div>

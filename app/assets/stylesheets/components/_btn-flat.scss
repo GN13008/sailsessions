@@ -28,8 +28,9 @@
 }
 
 .sticky-btn {
-  position: sticky;
-  bottom: 85px;
+  position: fixed;
+  bottom: 100px;
+  width:85vw;
 }
 
 .btn-flat-search {
