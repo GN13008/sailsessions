@@ -14,7 +14,7 @@ class Ride < ApplicationRecord
   end
 
   def departure_date
-    I18n.l(self.date, format:'%A %d %B')
+    I18n.l(self.date, format:'%a %d %B').capitalize()
   end 
 end
 
