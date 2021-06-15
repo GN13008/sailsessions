@@ -7,7 +7,7 @@
   <a href="javascript:history.back()" class="position-top-left">
     <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
   </a>
-  <h1 class="view-headline text-center pt-3"><%= @ride.title %></h1>
+  <h1 class="view-headline text-center pt-3">Détail de la session</h1>
 <hr>
   <div class="d-flex">
     <!-- Score cards container  -->
@@ -29,11 +29,12 @@
 
     <!-- Informations complémentaires sur la session -->
     <div class="flex-fill pl-3 pt-2">
-      <h3 class="view-headline">Spot: <%= @ride.spot %></h3>
-      <h3 class="view-headline">Faites connaissance avec : </h3>
+      <h2 class="view-headline"><%= @ride.title %></h2>
+      <h3 class="view-headline">Spot : <%= @ride.spot %></h3>
+      <h3 class="view-headline">Rejoins la session de :</h3>
 
   <!-- Card Contact Component -->
-      <div class="card-reviews">
+      <div class="card-reviews driver">
         <div class="card-top">
 <!-- Mécanisme de remplacement des photos par celles de l'utilisateur créateur de l'offre -->
           <% if @ride.user.photo.attached? %>
@@ -44,10 +45,7 @@
           <h3 class="ml-3"><%=@ride.user.name%></h3>
         </div>
       </div>
-        <div id="btn-contact">
-         <h3 class="view-headline"><a class="btn btn-flat background-accent-color" href="#">Contacter</a></h3>
-        </div>
-      </div>
+    </div>
 
  <!-- Fin Card Contact Component -->
       </div>

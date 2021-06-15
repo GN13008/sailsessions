@@ -8,22 +8,24 @@
   <h2><%= @description %></h2>
   <hr>
   <% @rides.each do |ride| %>
-    <%= link_to ride_path(ride) do %>
-      <div class="card-session">
-        <div class="card-session-colum">
-            <h3><%= ride.title %></h3>
-            <p>Place : <%= ride.nb_of_place %></p>
-            <p>Spot : <%= ride.spot %></p>
+    <% if ride.user != current_user %>
+      <%= link_to ride_path(ride) do %>
+        <div class="card-session">
+          <div class="card-session-colum">
+              <h3><%= ride.title %></h3>
+              <p>Place : <%= ride.nb_of_place %></p>
+              <p>Spot : <%= ride.spot %></p>
+          </div>
+          <div class="card-session-colum  right">
+            <% if ride.user.photo.attached? %>
+              <%= cl_image_tag ride.user.photo.key, class: "profile-pic" %>
+            <% else %>
+              <%= image_tag 'logo-sail-sessions.png', class: "profile-pic" %>
+            <% end %>
+            <p><%= ride.departure_date %></p>
+          </div>
         </div>
-        <div class="card-session-colum  right">
-          <% if ride.user.photo.attached? %>
-            <%= cl_image_tag ride.user.photo.key, class: "profile-pic" %>
-          <% else %>
-            <%= image_tag 'logo-sail-sessions.png', class: "profile-pic" %>
-          <% end %>
-          <p><%= ride.date %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
   <hr>
