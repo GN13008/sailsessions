@@ -1,0 +1,39 @@
+#form-message-bottom {
+    position: fixed;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+}
+
+.other-messages {
+    text-align: left;
+    margin: 2px 0;
+
+    .other-messages-inside {
+        background-color: $secondary-color;
+        color: $text-color;
+        width: max-content; 
+        border-radius: 8px; 
+        padding: 5px 10px;
+        .p-white {
+            color: $text-color;
+        }
+    }
+}
+
+.my-messages {
+    text-align: right;
+    margin: 2px 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .my-messages-inside {
+        background-color: $accent-color;
+        width: max-content;
+        border-radius: 8px;
+        padding: 5px 10px;
+        color: $text-color;
+        
+    }
+}

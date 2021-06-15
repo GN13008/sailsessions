@@ -1,3 +1,5 @@
+// Homepage Banner design
+
 .home-banner{
     height: 400px;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
@@ -29,3 +31,10 @@
     justify-content: center;
 }
 
+// Search Banner design
+
+.search-banner {
+height: 25vh;
+background-image: url("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623752757/Banner-Search_SailSessions_bjsk3j.png");
+background-size: cover;
+}
