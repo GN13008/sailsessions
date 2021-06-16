@@ -9,6 +9,11 @@ class MessagesController < ApplicationController
         @chatroom,
         render_to_string(partial: "message", locals: { message: @message })
       )
+      @chatroom.participants.each do |user|
+        user.notif = true unless current_user == user
+        user.save
+        UserChannel.broadcast_to( user, "notif-parent")
+      end
       redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
       render "chatrooms/show"

@@ -1,11 +1,12 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div data-user-id='<%= current_user.id %>' class="navbar navbar-expand-sm navbar-light navbar-lewagon"> 
     <div class="navbar">
       <% if user_signed_in? %>
         <%= link_to root_path do %>
           <%= image_tag "nav-icon/home_black_24dp.svg", class:"item item1" %>
         <% end %>
-        <%= link_to chatrooms_path do %>
+        <%= link_to chatrooms_path, id:"notif-parent" do %>
           <%= image_tag "nav-icon/question_answer_black_24dp.svg", class:"item item1" %>
+          <div class="notif <%= current_user.notif ? 'notif-active' : ''%>" ></div>
           <% end %>
         <%= link_to new_ride_path do %>
           <%= image_tag "nav-icon/add_circle_outline_black_24dp.svg", class:"item item1" %>
