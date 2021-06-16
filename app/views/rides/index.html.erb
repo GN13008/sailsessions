@@ -95,10 +95,9 @@
                             <div class="card-middle">
                                 <p>Sport : <%= ride.sport.name %></p>
                                 <p>Spot : <%= ride.spot %></p>
-                                <p>Date : <%= ride.departure_date %></p>
-                                <p>Début : <%= ride.format_hour(ride.start_time) %></p>
+                                <p>Date : <%= ride.departure_date %> à <%= ride.format_hour(ride.start_time) %></p>
                             </div>
-                            <div class="">
+                            <div class="detail-discuter">
                                 <%= link_to "Détail", ride_path(ride), class: 'btn btn-flat background-grey-color' %>
                                 <%= link_to "Discuter", chatroom_path(ride.chatroom), class: 'btn btn-flat background-accent-color' %>
                             </div>
@@ -153,13 +152,14 @@
                             <div class="card-middle">
                                 <p>Sport : <%= booking.ride.sport.name %></p>
                                 <p>Spot : <%= booking.ride.spot %></p>
-                                <p>Date : <%= booking.ride.departure_date %></p>
-                                <p>Début : <%= booking.ride.format_hour(booking.ride.start_time) %></p>
+                                <p>Date : <%= booking.ride.departure_date %> à <%= booking.ride.format_hour(booking.ride.start_time) %></p>
                                 <p>statut : <%= booking.status %></p>
                                 <p class="margin-bottom">Ta mission : <%= booking.echange %></p>
                             </div>
-                                <%= link_to "Détail", ride_path(booking.ride), class: 'btn btn-flat background-grey-color' %>
-                                <%= link_to "Discuter", chatroom_path(booking.ride.chatroom), class: 'btn btn-flat background-accent-color' %>
+                                <div class="detail-discuter">
+                                    <%= link_to "Détail", ride_path(booking.ride), class: 'btn btn-flat background-grey-color' %>
+                                    <%= link_to "Discuter", chatroom_path(booking.ride.chatroom), class: 'btn btn-flat background-accent-color' %>
+                                </div>
                         <% else %>
                             <p>En attente de la validation de <%= booking.ride.user.name %></p>
                         <% end %>
