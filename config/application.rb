@@ -15,6 +15,7 @@ module Sailsessions
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.exceptions_app = self.routes # for errors
 
     config.i18n.default_locale = :fr
 
@@ -24,3 +25,4 @@ module Sailsessions
     # the framework and any gems in your application.
   end
 end
+
