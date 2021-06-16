@@ -37,7 +37,7 @@
     <%= link_to user_profile_path(@ride.user),:action => 'go' do  %>
   <!-- Card Contact Component -->
       <div class="card-reviews driver">
-        <div class="card-top">
+        <div class="card-profil">
   <!-- Mécanisme de remplacement des photos par celles de l'utilisateur créateur de l'offre -->
           <% if @ride.user.photo.attached? %>
             <%= cl_image_tag @ride.user.photo.key, class: "profile-pic" %>
@@ -45,7 +45,7 @@
             <%= image_tag "logo-sail-sessions.png", class: "profile-pic" %>
           <% end %>
           <!-- Nom du créateur de la session -->
-          <div>
+          <div class="name">
             <h3 class="ml-3"><%=@ride.user.name%></h3>
           </div>
         </div>
