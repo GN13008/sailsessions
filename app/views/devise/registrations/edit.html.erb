@@ -3,7 +3,7 @@
 </a>
 <div class="container-de-pierre-le-plus-beau">
   <div class="container-edit-profile">
-    <div class="avatar-edit-profile"> 
+    <div class="avatar-edit-profile">
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar-profil-user" %>
       <% else %>
@@ -11,8 +11,8 @@
       <% end %>
     </div>
     <div >
-      <h1><%=current_user.name%></h1>
-      <h2><%=current_user.age%></h2>
+      <h1><%=@user.name%></h1>
+      <h2><%=@user.age%></h2>
       <div class="social-mt-5">
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -23,7 +23,7 @@
     </div>
 
 
-  </div>  
+  </div>
 
   <hr class=hr-color>
   <div>
@@ -50,11 +50,11 @@
       <%= f.input :age,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
-                  input_html: { autocomplete: "new-age" } %> 
+                  input_html: { autocomplete: "new-age" } %>
       <%= f.input :bio,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
-                  input_html: { autocomplete: "new-bio" } %>                       
+                  input_html: { autocomplete: "new-bio" } %>
 
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
@@ -71,7 +71,7 @@
 
     <div class="form-actions">
 
-     
+
 
       <%= f.button :submit, "Update", class:"btn btn-flat background-accent-color big-btn link-to-h3" %>
 

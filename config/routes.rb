@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get "/components", to: "pages#components", as: :components
 
+  get "/users/:id", to: "users#show", as: :user_profile
+
   resources :chatrooms, only: :index
   resources :chatrooms, only: :show do
     resources :messages, only: :create
