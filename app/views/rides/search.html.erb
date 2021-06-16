@@ -1,14 +1,14 @@
 
 <!-- Content for Meta-data -->
 <% content_for :meta_title, "Toutes nos sessions | #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "Parcourez l'ensemble des sessions nautiques disponibles sur SailSession. Kite, Windsurf, Surf et plus méritent d'être partagés." %>
+<% content_for :meta_description, "Parcourez l'ensemble des sessions nautiques disponibles sur SailSession. Kite, Windsurf, Surf, Jet-Ski et plus méritent d'être partagés." %>
 <% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
 <div class="search-banner"></div>
 <div class="container">
   <h1 class="pt-4">Il y a <%= @rides_count %> sessions <%= @sport if params[:sport].present? %></h1>
   <h2><%= @description %></h2>
   <p> <%= Sport.find(@sport_id).description if params[:sport].present?%></p>
-  
+
   <hr>
   <% @rides.each do |ride| %>
     <% if ride.user != current_user %>
