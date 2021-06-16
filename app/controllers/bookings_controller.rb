@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new()
+    @booking = Booking.new(booking_params)
     @ride = Ride.find(params[:ride_id])
     @booking.ride = @ride
     @booking.user = current_user
@@ -40,6 +40,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status)
+    params.require(:booking).permit(:status, :echange)
   end
 end

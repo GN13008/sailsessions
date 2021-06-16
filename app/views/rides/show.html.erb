@@ -27,25 +27,30 @@
       </div>
     </div>
 
-
     <!-- Informations complémentaires sur la session -->
     <div class="flex-fill pl-3 pt-2">
       <h2 class="view-headline"><%= @ride.title %></h2>
       <h3 class="view-headline">Spot : <%= @ride.spot %></h3>
       <h3 class="view-headline">Rejoins la session de :</h3>
 
+    <!-- Redirection vers le profil du rider -->
+    <%= link_to user_profile_path(@ride.user),:action => 'go' do  %>
   <!-- Card Contact Component -->
       <div class="card-reviews driver">
         <div class="card-top">
-<!-- Mécanisme de remplacement des photos par celles de l'utilisateur créateur de l'offre -->
+  <!-- Mécanisme de remplacement des photos par celles de l'utilisateur créateur de l'offre -->
           <% if @ride.user.photo.attached? %>
             <%= cl_image_tag @ride.user.photo.key, class: "profile-pic" %>
           <% else %>
             <%= image_tag "logo-sail-sessions.png", class: "profile-pic" %>
           <% end %>
-          <h3 class="ml-3"><%=@ride.user.name%></h3>
+          <!-- Nom du créateur de la session -->
+          <div>
+            <h3 class="ml-3"><%=@ride.user.name%></h3>
+          </div>
         </div>
       </div>
+    <% end %>
     </div>
 
  <!-- Fin Card Contact Component -->
@@ -75,50 +80,14 @@
     <% if (current_user.id != @ride.user_id) %>
       <div class="dropdown pt-3" id="echange-selector">
        <%= simple_form_for [@ride, @booking] do |f| %>
-         <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"] %>
-         <div class="sticky-btn">
-          <%= f.submit "Reserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
+         <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"], :label => false, prompt: "Fais ton choix ✨🎁" %>
+         <div>
+          <%= f.submit "Réserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
          </div>
        <% end %>
       </div>
     <% end %>
   </div>
   <hr>
-  <!-- Reviews Section -->
-  <div class="container custom-padding">
-    <div class="card-reviews">
-      <div class="card-top">
-        <img class="profile-pic" src="https://images.unsplash.com/photo-1600721391715-1c08ac1393ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80" alt="profile">
-        <div class="padding-h1">
-          <h3>Kelly Slater</h3>
-          <h3>Mars 2021</h3>
-        </div>
-      </div>
-        <p class="padding-text">Superbe session, trés bon moment à refaire au plus vite !</p>
-    </div>
 
-  <div class="card-reviews">
-      <div class="card-top">
-        <img class="profile-pic" src="https://images.unsplash.com/photo-1571224736343-7182962ae3e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="profile">
-        <div class="padding-h1">
-          <h3>John Tagiri</h3>
-          <h3>Février 2021</h3>
-        </div>
-      </div>
-        <p class="padding-text">Un bon moment partagé même si la météo n'était pas au top.</p>
-    </div>
-
-    <div class="card-reviews">
-      <div class="card-top">
-        <img class="profile-pic" src="https://images.unsplash.com/photo-1622673705547-2609427981ef?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY5fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="profile">
-        <div class="padding-h1">
-          <h3>Jackson David</h3>
-          <h3>Août 2020</h3>
-        </div>
-      </div>
-        <p class="padding-text">Une session au top et un partage d'expérience enrichissant !</p>
-    </div>
-  </div>
-  <!-- Sticky Réserver Button -->
-   
 </div>

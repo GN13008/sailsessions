@@ -3,7 +3,7 @@
 </a>
 <div class="container-de-pierre-le-plus-beau">
   <div class="container-edit-profile">
-    <div class="avatar-edit-profile"> 
+    <div class="avatar-edit-profile">
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar-profil-user" %>
       <% else %>
@@ -23,7 +23,7 @@
     </div>
 
 
-  </div>  
+  </div>
 
   <hr class=hr-color>
   <div>
@@ -44,43 +44,48 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
       <%= f.input :name,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
-                  input_html: { autocomplete: "new-name" } %>
+                  input_html: { autocomplete: "nouveau-nom" } %>
       <%= f.input :age,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
-                  input_html: { autocomplete: "new-age" } %> 
+
+                  input_html: { autocomplete: "nouvelle-age" } %> 
+
       <%= f.input :bio,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
-                  input_html: { autocomplete: "new-bio" } %>                       
+
+                  input_html: { autocomplete: "nouvelle-bio" } %>                  
+                 
+
 
       <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "nouveau-mot de passe" } %>
       <%= f.input :password_confirmation,
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "nouveau-mot de passe" } %>
       <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  hint: "nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
                   required: true,
-                  input_html: { autocomplete: "current-password" } %>
+                  input_html: { autocomplete: "Mot de passe actuel" } %>
     </div>
 
     <div class="form-actions">
 
-     
 
-      <%= f.button :submit, "Update", class:"btn btn-flat background-accent-color big-btn link-to-h3" %>
+
+      <%= f.button :submit, "Mettre a jour", class:"btn btn-flat background-accent-color big-btn link-to-h3" %>
 
     </div>
   <% end %>
 <div class="notre-container btn-container">
-  <%= link_to "Cancel my account", registration_path(resource_name), class:"btn btn-flat background-secondary-color" , data: { confirm: "Are you sure?" }, method: :delete %>
+  <%= link_to "Supprimer", registration_path(resource_name), class:"btn btn-flat background-secondary-color" , data: { confirm: "Are you sure?" }, method: :delete %>
 
-  <%= link_to "log out" , destroy_user_session_path, method: :delete, class:"btn btn-flat background-secondary-color"  %>
+  <%= link_to "Deconnexion" , destroy_user_session_path, method: :delete, class:"btn btn-flat background-secondary-color"  %>
 </div>
 
 </div>

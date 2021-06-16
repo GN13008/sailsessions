@@ -1,20 +1,28 @@
+
 <div class="container">
-  <a href="javascript:history.back()">
-    <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
+  <a href="javascript:history.back()" class="pt-3">
+  <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
   </a>
-  <h1 class="">Bienvenue dans la chatroom</h1>
-  <h3>Ici tu peux discuter avec les autres riders de tes sessions.</h3>
-  <p>Les bières sont bien prévues ? On a des Gopro chargées ?</p>
-  <p>Allez va organiser tout ca !</p>
+
+  <div class="text-center">
+    <h1>Bienvenue dans la chatroom</h1>
+    <p>Discute directement avec les autres riders et prévoyez votre session <strong>ensemble.</strong></p>
+        <p>- Le matériel est-il prêt ?</p>
+        <p>- Confirme ce que tu apportes</p>
+        <p>- Introduis toi au groupe !</p>
+  </div>
   <hr>
   <h3>Les sessions ou tu es conducteur :</h3>
+  <% if @myrides.count == 0 %>
+    <p>Tu n'as pas de sessions prévues pour le moment</p>
+  <% end %>
   <% @myrides.each do |r| %>
     <%= link_to chatroom_path(r.chatroom) do %>
       <div class="card-mes-session booking">
         <div class="top-card-mes-session">
           <h3 class="mb-0"><%= r.chatroom.name %></h3>
           <div class="right-flex">
-            <p><%= r.departure_date %></p>
+            <h4 class="text-color-orange"><%= r.departure_date %></h4>
           </div>
         </div>
         <div class="bar-white"></div>
@@ -37,34 +45,40 @@
       </div>
     <% end %>
   <% end %>
+  <hr>
   <h3>Les sessions ou tu es passager : </h3>
+  <% if @count == 0 %>
+    <p>Tu n'as pas de sessions prévues pour le moment</p>
+  <% end %>
   <% @mybookings.each do |b| %>
-    <%= link_to chatroom_path(b.ride.chatroom) do %>
-      <div class="card-mes-session booking">
-        <div class="top-card-mes-session">
-          <h3 class="mb-0"><%= b.ride.chatroom.name %></h3>
-          <div class="right-flex">
-            <p><%= b.ride.chatroom.ride.departure_date %></p>
+    <% if b.status == "acceptée" || b.status == "en attente" %>
+      <%= link_to chatroom_path(b.ride.chatroom) do %>
+        <div class="card-mes-session booking">
+          <div class="top-card-mes-session">
+            <h3 class="mb-0"><%= b.ride.chatroom.name %></h3>
+            <div class="right-flex">
+              <h4 class="text-color-orange"><%= b.ride.chatroom.ride.departure_date %></h4>
+            </div>
           </div>
-        </div>
-        <div class="bar-white"></div>
-        <div class="card-middle">
-          <div class="right-flex">
-            <% if b.ride.chatroom.ride.user.photo.attached? %>
-                <%= cl_image_tag b.ride.chatroom.ride.user.photo.key, class: "profile-pic margin driver" %>
-            <% else %>
-                <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin driver" %>
-            <% end %>
-            <% b.ride.chatroom.ride.bookings.where(status: "acceptée").each do |c| %>
-              <% if c.user.photo.attached? %>
-                  <%= cl_image_tag c.user.photo.key, class: "profile-pic margin" %>
+          <div class="bar-white"></div>
+          <div class="card-middle">
+            <div class="right-flex">
+              <% if b.ride.chatroom.ride.user.photo.attached? %>
+                  <%= cl_image_tag b.ride.chatroom.ride.user.photo.key, class: "profile-pic margin driver" %>
               <% else %>
-                  <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin" %>
+                  <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin driver" %>
               <% end %>
-            <% end %>
+              <% b.ride.chatroom.ride.bookings.where(status: "acceptée").each do |c| %>
+                <% if c.user.photo.attached? %>
+                    <%= cl_image_tag c.user.photo.key, class: "profile-pic margin" %>
+                <% else %>
+                    <%= image_tag "logo-sail-sessions.png", class: "profile-pic margin" %>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
