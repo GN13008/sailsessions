@@ -5,8 +5,10 @@
 <% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
 <div class="search-banner"></div>
 <div class="container">
-  <h1 class="pt-4">Il y a <%= @rides.count %> sessions <%= @sport if params[:sport].present? %></h1>
+  <h1 class="pt-4">Il y a <%= @rides_count %> sessions <%= @sport if params[:sport].present? %></h1>
   <h2><%= @description %></h2>
+  <p> <%= Sport.find(@sport_id).description if params[:sport].present?%></p>
+  
   <hr>
   <% @rides.each do |ride| %>
     <% if ride.user != current_user %>
