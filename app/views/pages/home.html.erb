@@ -19,7 +19,7 @@
 </div>
   <!-- Search Form  -->
 <div class="container">
-  <h2 class="pt-3 view-headline text-center">Cherche une session de sport nautique près de chez toi!</h2>
+  <h2 class="pt-3 view-headline text-center">Cherche une session près de chez toi!</h2>
     <div class="search-form-control form-group form-inline center-search">
       <%= form_with url: "/search", method: :get, local: true, :remote => true  do |form| %>
        <!-- Dropdown -->
@@ -37,7 +37,7 @@
 
 
 <!-- Carroussel Images -->
-  <h2 class="pt-3 view-headline">Ta session par sport</h2>
+  <h2 class="pt-2 view-headline">Découvre nos sports</h2>
   <section class="carousel">
       <ul class="carousel-items">
           <% @sports.each do |sport| %>
