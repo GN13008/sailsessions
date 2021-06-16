@@ -80,9 +80,9 @@
     <% if (current_user.id != @ride.user_id) %>
       <div class="dropdown pt-3" id="echange-selector">
        <%= simple_form_for [@ride, @booking] do |f| %>
-         <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"] %>
-         <div class="sticky-btn">
-          <%= f.submit "Reserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
+         <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"], :label => false, prompt: "Fais ton choix ✨🎁" %>
+         <div>
+          <%= f.submit "Réserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
          </div>
        <% end %>
       </div>
