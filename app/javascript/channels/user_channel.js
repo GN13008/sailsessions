@@ -2,7 +2,7 @@
 import consumer from "./consumer";
 
 const initUserCable = () => {
-const nav = document.querySelector('.navbar.navbar-expand-sm.navbar-light.navbar-lewagon')
+const nav = document.querySelector('#navbarws')
   const id = Number(nav.dataset.userId);
 
   consumer.subscriptions.create({ channel: "UserChannel", id: id }, {
