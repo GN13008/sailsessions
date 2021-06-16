@@ -3,6 +3,7 @@
 <% content_for :meta_title, "SailSession | #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Redécouvrez avec SailSession le plaisir de partager votre passion pour les sports nautiques. Ensemble c'est toujours mieux!" %>
 <% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
+
 <div class="home-banner">
       <div class="container pl-4">
         <div class="img-container">
@@ -20,7 +21,11 @@
 </div>
   <!-- Search Form  -->
 <div class="container">
+<<<<<<< HEAD
   <h2 class="pt-3 view-headline">Cherche une session près de chez toi!</h2>
+=======
+  <h2 class="pt-3 view-headline text-center">Cherche une session près de chez toi!</h2>
+>>>>>>> 4c20c5d7270874e583657821c873ae25ea69eed4
     <div class="search-form-control form-group form-inline center-search">
       <%= form_with url: "/search", method: :get, local: true, :remote => true  do |form| %>
        <!-- Dropdown -->
@@ -38,7 +43,7 @@
 
 
 <!-- Carroussel Images -->
-  <h2 class="pt-3 view-headline">Ta session par sport</h2>
+  <h2 class="pt-2 view-headline">Découvre nos sports</h2>
   <section class="carousel">
       <ul class="carousel-items">
           <% @sports.each do |sport| %>
@@ -54,7 +59,7 @@
 
 
 
-  <h2 class="pt-3 view-headline">Top session</h2>
+  <h2 class="pt-3 view-headline">Rejoins ces sessions!</h2>
   <div class="cards-sessions">
     <% @rides.each do |ride| %>
       <%= link_to ride_path(ride) do %>
