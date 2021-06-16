@@ -165,34 +165,34 @@ puts "#{ride15.title} is created"
 puts "Sessions are created"
 puts "Creating 3 bookings"
 
-booking1 = Booking.new()
+booking1 = Booking.new(echange: "j'apporte les bières")
 booking1.user = paul
 booking1.ride = ride3
 booking1.save
 puts "Paul reserve la session sup de Pierre"
 
-booking2 = Booking.new()
+booking2 = Booking.new(echange: "j'apporte les bières")
 booking2.user = ibra
 booking2.ride = ride2
 booking2.save
 puts "Ibra reserve la session surf de Pierre"
 
-booking3 = Booking.new()
+booking3 = Booking.new(echange: "j'apporte les bières")
 booking3.user = pierre
 booking3.ride = ride1
 booking3.save
 puts "Pierre reserve la session kite de Guillaume"
 
-booking4 = Booking.new()
+booking4 = Booking.new(echange: "j'apporte les bières")
 booking4.user = flo
 booking4.ride = ride1
 booking4.save
 puts "Flo reserve la session kite de Guillaume"
 
-booking5 = Booking.new()
+booking5 = Booking.new(echange: "j'apporte les bières")
 booking5.user = ibra
-booking5.ride = ride2
+booking5.ride = ride15
 booking5.save
-puts "Ibra reserve la session surf de Pierre"
+puts "Ibra reserve la session sup de Paul"
 
 puts "booking are done"
