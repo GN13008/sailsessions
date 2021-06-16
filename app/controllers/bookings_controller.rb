@@ -10,6 +10,11 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
+      
+        @booking.ride.user.notif_booking = true 
+        @booking.ride.user.save
+        UserChannel.broadcast_to( @booking.ride.user, "notif-parent-booking")
+      
       redirect_to rides_path
     else
       render @ride
