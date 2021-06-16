@@ -16,6 +16,14 @@ h3 {
     color: $secondary-color;
     font-family: 'Mate SC', serif;
 }
+
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: $secondary-color;
+    font-family: 'Mate SC', serif;
+}
+
 p {
     font-size: 16px;
     color: $secondary-color;
@@ -35,4 +43,8 @@ p {
 
 a:hover {
     text-decoration: none;
+}
+
+.text-color-orange {
+  color: #E5863A;
 }
