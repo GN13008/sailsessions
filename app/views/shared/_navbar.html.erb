@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon"> 
     <div class="navbar">
       <% if user_signed_in? %>
-      <div id="navbarws" data-user-id='<%= current_user.id %>'>
+      <div class="navbar" id="navbarws" data-user-id='<%= current_user.id %>'>
         <%= link_to root_path do %>
           <%= image_tag "nav-icon/home_black_24dp.svg", class:"item item1" %>
         <% end %>
@@ -12,8 +12,9 @@
         <%= link_to new_ride_path do %>
           <%= image_tag "nav-icon/add_circle_outline_black_24dp.svg", class:"item item1" %>
           <% end %>
-        <%= link_to rides_path do %>
+        <%= link_to rides_path, id:"notif-parent-booking" do %>
           <%= image_tag "nav-icon/today_black_24dp.svg", class:"item item1" %>
+          <div style="right: 140px; top: 7px;" class="notif <%= current_user.notif_booking ? 'notif-active' : ''%>" ></div>
           <% end %>
         <%= link_to edit_user_registration_path do %>
           <%= image_tag "nav-icon/account_circle_black_24dp.svg", class:"item item1" %>
