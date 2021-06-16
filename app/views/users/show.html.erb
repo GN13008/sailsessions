@@ -1,0 +1,84 @@
+<!-- Content for Meta-data -->
+<% content_for :meta_title, "Voir le profile | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Découvre le profile de cet utilisateur dès à présent." %>
+<% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
+
+<!-- Return Arrow  -->
+<a href="javascript:history.back()" class="position-top-left">
+    <img src="/assets/outline_arrow_back_ios_black_24dp-0f53470fb95d1a3f23892c3ceddb89220a40d542abd6f7b96cbb39b507674846.png">
+</a>
+
+<!-- Page Main Container -->
+<div class="conainer">
+  <div class="container-edit-profile">
+    <div class="avatar-edit-profile">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, class: "avatar-profil-user" %>
+      <% else %>
+        <%= image_tag 'logo-sail-sessions.png', class: "avatar-profil-user" %>
+      <% end %>
+    </div>
+    <div >
+      <h1><%=@user.name%></h1>
+      <h2><%=@user.age%></h2>
+      <div class="social-mt-5">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+   <hr>
+   <!-- User Information  -->
+   <div class="container">
+    <h2>Qui est <%= @user.name %> ?</h2>
+    <p><%= @user.bio %></p>
+    <hr>
+     <h3> <%= @user.name%> a réalisé : <%=@user.rides.count %> Sessions</h3>
+   </div>
+   <hr>
+
+   <!-- Reviews Section -->
+  <div class="container">
+    <h3 class="pb-2">Voici ce qu'ils disent sur <%= @user.name %> </h3>
+    <div class="card-reviews">
+      <div class="card-top">
+        <img class="profile-pic" src="https://images.unsplash.com/photo-1600721391715-1c08ac1393ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80" alt="profile">
+        <div class="padding-h1">
+          <h3>Kelly Slater</h3>
+          <h4 class="text-color-orange">Mars 2021</h4>
+        </div>
+      </div>
+        <p class="padding-text">Superbe session, trés bon moment à refaire au plus vite !</p>
+    </div>
+
+  <div class="card-reviews">
+      <div class="card-top">
+        <img class="profile-pic" src="https://images.unsplash.com/photo-1571224736343-7182962ae3e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="profile">
+        <div class="padding-h1">
+          <h3>John Tagiri</h3>
+          <h4 class="text-color-orange">Février 2021</h4>
+        </div>
+      </div>
+        <p class="padding-text">Un bon moment partagé même si la météo n'était pas au top.</p>
+    </div>
+
+    <div class="card-reviews">
+      <div class="card-top">
+        <img class="profile-pic" src="https://images.unsplash.com/photo-1622673705547-2609427981ef?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY5fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="profile">
+        <div class="padding-h1">
+          <h3>Jackson David</h3>
+          <h4 class="text-color-orange">Août 2020</h4>
+        </div>
+      </div>
+        <p class="padding-text">Une session au top et un partage d'expérience enrichissant !</p>
+    </div>
+  </div>
+    <!-- Laisser un commentaire -->
+  <div>
+    <h4><a class="btn btn-flat background-accent-color margin-top big-btn" href="#">Ajouter un commentaire</a></h4>
+  </div>
+</div>
+

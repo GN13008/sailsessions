@@ -3,7 +3,7 @@
 </a>
 <div class="container-de-pierre-le-plus-beau">
   <div class="container-edit-profile">
-    <div class="avatar-edit-profile"> 
+    <div class="avatar-edit-profile">
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar-profil-user" %>
       <% else %>
@@ -23,7 +23,7 @@
     </div>
 
 
-  </div>  
+  </div>
 
   <hr class=hr-color>
   <div>
@@ -50,11 +50,16 @@
       <%= f.input :age,
                   hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
+
                   input_html: { autocomplete: "nouvelle-age" } %> 
+
       <%= f.input :bio,
                   hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
-                  input_html: { autocomplete: "nouvelle-bio" } %>                       
+
+                  input_html: { autocomplete: "nouvelle-bio" } %>                  
+                 
+
 
       <%= f.input :password,
                   hint: "laissez-le vide si vous ne voulez pas le changer",
@@ -71,7 +76,7 @@
 
     <div class="form-actions">
 
-     
+
 
       <%= f.button :submit, "Mettre a jour", class:"btn btn-flat background-accent-color big-btn link-to-h3" %>
 
