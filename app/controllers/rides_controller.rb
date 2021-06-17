@@ -70,7 +70,7 @@ class RidesController < ApplicationController
     chatroom.ride = @ride
     flash.alert = "Problème de chatroom" unless chatroom.save
     if @ride.save
-      redirect_to @ride, notice: "Votre session vient d'être créée"
+      redirect_to ride_path(@ride), notice: "Votre session vient d'être créée"
     else
       flash.alert = "Merci de remplir les champs nécessaires à la création d'une session."
       render :new
