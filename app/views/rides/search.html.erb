@@ -8,7 +8,6 @@
   <h1 class="pt-4">Il y a <%= @rides_count %> sessions <%= @sport if params[:sport].present? %></h1>
   <h2><%= @description %></h2>
   <p> <%= Sport.find(@sport_id).description if params[:sport].present?%></p>
-
   <hr>
   <% @rides.each do |ride| %>
     <% if ride.user != current_user %>
