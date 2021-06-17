@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Sailsessions
   class Application < Rails::Application
+    config.time_zone = 'Europe/Paris'
+
     config.generators do |generate|
       generate.assets false
       generate.helper false
