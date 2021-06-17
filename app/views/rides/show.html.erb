@@ -73,21 +73,21 @@
     <hr>
   </div>
   <!-- Objets d'échange entre sessionners -->
-  <div class="container">
-    <h2 class="view-headline">Choisis ce que tu apportes</h2>
-    <p class="view-headline">Si cette session t'intéresses, alors il ne te reste pus qu'à choisir ce que tu souhaites apporter en échange du covoiturage. N'hésites pas à en discuter avec l'hôte pour trouver un compromis. </p>
-   <!-- Dropdown button -->
-    <% if (current_user.id != @ride.user_id) %>
+  <% if (current_user.id != @ride.user_id) %>
+    <div class="container">
+      <h2 class="view-headline">Choisis ce que tu apportes</h2>
+      <p class="view-headline">Si cette session t'intéresses, alors il ne te reste pus qu'à choisir ce que tu souhaites apporter en échange du covoiturage. N'hésites pas à en discuter avec l'hôte pour trouver un compromis. </p>
+      <!-- Dropdown button -->
       <div class="dropdown pt-3" id="echange-selector">
-       <%= simple_form_for [@ride, @booking] do |f| %>
-         <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"], :label => false, prompt: "Fais ton choix ✨🎁" %>
-         <div>
-          <%= f.submit "Réserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
-         </div>
-       <% end %>
+        <%= simple_form_for [@ride, @booking] do |f| %>
+          <%= f.input :echange, collection: [ "J’apporte les bières!", "J’apporte le pique nique!", "Je propose à l’hôte quelquechose"], :label => false, prompt: "Fais ton choix ✨🎁" %>
+          <div>
+            <%= f.submit "Réserver", class:"btn btn-flat background-accent-color margin-top big-btn link-to-h3" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <hr>
+    </div>
+    <hr>
+  <% end %>
 
 </div>
