@@ -15,8 +15,8 @@
         <%= f.input :spot, label: 'Lieux du spot :', input_html: {id:'create-input'} %>
         <%= f.input :nb_of_place, label: 'Nb place :' %>
         <%= f.input :date, label: 'Date :' %>
-        <%= f.input :start_time, label: 'Heure de départ :' %>
-        <%= f.input :end_time, label: 'Heure de fin :' %>
+        <%= f.input :start_time, label: 'Heure de départ :', as: :time, :minute_step => 15 %>
+        <%= f.input :end_time, label: 'Heure de fin :', as: :time, :minute_step => 15 %>
         <%= f.input :description, label: 'Description :' %>
         <%= f.submit class:"btn-flat", class:"btn btn-flat background-accent-color .link-to-h3 big-btn", label: "Crée ta session" %>
     <% end %>
