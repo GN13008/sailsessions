@@ -14,7 +14,7 @@
   <hr>
   <h3>Tu proposes:</h3>
   <% if @myrides.count == 0 %>
-    <p>Tu n'as pas de sessions prévues pour le moment</p>
+    <p>Tu n'as pas de sessions prévues pour le moment.</p>
   <% end %>
   <% @myrides.each do |r| %>
     <%= link_to chatroom_path(r.chatroom) do %>
@@ -48,7 +48,7 @@
   <hr>
   <h3>Tu rejoins:</h3>
   <% if @count == 0 %>
-    <p>Tu n'as pas de sessions prévues pour le moment</p>
+    <p>Tu n'as pas de sessions prévues pour le moment.</p>
   <% end %>
   <% @mybookings.each do |b| %>
     <% if b.status == "acceptée" || b.status == "en attente" %>
