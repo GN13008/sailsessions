@@ -7,17 +7,21 @@
     <%= image_tag "outline_arrow_back_ios_black_24dp.png" %>
 </a>
 <div class="notre-container">
-    <h1 class="view-headline pt-3">Create your session</h1>
+    <h1 class="view-headline pt-3">Propose ta session</h1>
+      <h3> Ta passion mérite d'être partagée!</h3>
+      <p>Crée ta session de sport nautique et embarquez à plusieurs pour des moments inoubliables.</p>
+      
+    <hr>
     <%= simple_form_for(@ride) do |f| %>
         <%= f.association :sport, label: 'Sport :' %>
-        <%= f.input :title, label: 'Titre :' %>
+        <%= f.input :title, label: 'Titre de la session :' %>
         <%= f.input :from, label: 'Lieux de départ :', input_html: {id:'from-input'} %>
         <%= f.input :spot, label: 'Lieux du spot :', input_html: {id:'create-input'} %>
-        <%= f.input :nb_of_place, label: 'Nb place :' %>
+        <%= f.input :nb_of_place, label: 'Places disponibles :' %>
         <%= f.input :date, label: 'Date :' %>
         <%= f.input :start_time, label: 'Heure de départ :' %>
         <%= f.input :end_time, label: 'Heure de fin :' %>
         <%= f.input :description, label: 'Description :' %>
-        <%= f.submit class:"btn-flat", class:"btn btn-flat background-accent-color .link-to-h3 big-btn", label: "Crée ta session" %>
+        <h3><%= f.submit "Créer une session", class:"btn-flat", class:"btn btn-flat background-accent-color .link-to-h3 big-btn", label: "Crée ta session" %></h3>
     <% end %>
 </div>
