@@ -13,6 +13,25 @@
   justify-content: space-around;
 }
 
+.notif {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #E5863A;
+  position: absolute;
+  top: -5px;
+  right: 37px;
+  display: none;
+  &.notif-active {
+    display: block;
+  }
+}
+
+
+#notif-parent {
+  position: relative;
+}
+
 .wave {
   position: absolute;
   bottom: 0;

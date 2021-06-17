@@ -3,6 +3,10 @@ class RidesController < ApplicationController
     #les réservations que je fait
     @mybookings = current_user.bookings
 
+    #notif
+    current_user.notif_booking = false
+    current_user.save
+
     #les sessions que j'ai crées
     @myrides = current_user.rides
     @resa_en_att = 0
