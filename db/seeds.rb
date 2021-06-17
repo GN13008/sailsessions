@@ -57,7 +57,7 @@ puts "Creating 15 rides"
 
 ride1 = Ride.new(title: "Grosse Session à l'almanarre", from: "Marseille, Provence-Alpes-Côte d'Azur, France", spot: "18 Route du Sel, Hyères", start_time: "10:00", end_time: "18:00", date: "19/06/2021", nb_of_place: 2)
 ride1.user = thomas
-ride1.sport = kite
+ride1.sport = wind
 ride1.save
 Chatroom.create(name: ride1.title, ride_id: ride1.id)
 puts "#{ride1.title} is created"
