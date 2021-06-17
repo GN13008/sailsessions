@@ -16,7 +16,7 @@ class RidesController < ApplicationController
       @resa_acceptee += ride.bookings.where(status: "acceptée").count
     end
 
-    
+
   end
 
   def search
@@ -39,7 +39,7 @@ class RidesController < ApplicationController
     @rides_count = @rides.count
     @rides.each do |ride|
       if  ride.user == current_user
-        @rides_count -= 1 
+        @rides_count -= 1
       end
     end
 
@@ -70,7 +70,7 @@ class RidesController < ApplicationController
     chatroom.ride = @ride
     flash.alert = "Problème de chatroom" unless chatroom.save
     if @ride.save
-      redirect_to @ride, notice: "Votre session vient d'être créée"
+      redirect_to :action => @ride, notice: "Votre session vient d'être créée"
     else
       flash.alert = "Merci de remplir les champs nécessaires à la création d'une session."
       render :new

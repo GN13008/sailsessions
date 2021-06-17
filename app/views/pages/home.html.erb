@@ -1,6 +1,6 @@
 
 <!-- Content for Meta-data -->
-<% content_for :meta_title, "SailSession | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_title, "Bienvenue en été | #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Redécouvrez avec SailSession le plaisir de partager votre passion pour les sports nautiques. Ensemble c'est toujours mieux!" %>
 <% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
 
@@ -21,11 +21,7 @@
 </div>
   <!-- Search Form  -->
 <div class="container">
-<<<<<<< HEAD
-  <h2 class="pt-3 view-headline">Cherche une session près de chez toi!</h2>
-=======
   <h2 class="pt-3 view-headline text-center">Cherche une session près de chez toi!</h2>
->>>>>>> 4c20c5d7270874e583657821c873ae25ea69eed4
     <div class="search-form-control form-group form-inline center-search">
       <%= form_with url: "/search", method: :get, local: true, :remote => true  do |form| %>
        <!-- Dropdown -->
