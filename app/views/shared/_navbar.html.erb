@@ -2,31 +2,40 @@
     <div class="navbar">
       <% if user_signed_in? %>
       <div class="navbar" id="navbarws" data-user-id='<%= current_user.id %>'>
-        <%= link_to root_path do %>
-          <%= image_tag "nav-icon/home_black_24dp.svg", class:"item item1" %>
-        <% end %>
-        <%= link_to chatrooms_path, id:"notif-parent" do %>
-          <%= image_tag "nav-icon/question_answer_black_24dp.svg", class:"item item1" %>
-          <div class="notif <%= current_user.notif ? 'notif-active' : ''%>" ></div>
+
+          <%= link_to root_path do %>
+            <%= image_tag "nav-icon/home_black_24dp.svg", class:"item item1" %>
           <% end %>
-        <%= link_to new_ride_path do %>
-          <%= image_tag "nav-icon/add_circle_outline_black_24dp.svg", class:"item item1" %>
+        
+          <%= link_to chatrooms_path, id:"notif-parent" do %>
+            <%= image_tag "nav-icon/question_answer_black_24dp.svg", class:"item item1" %>
+            <div class="notif <%= current_user.notif ? 'notif-active' : ''%>" ></div>
+          <% end %>  
+        
+          <%= link_to new_ride_path do %>
+            <%= image_tag "nav-icon/add_circle_outline_black_24dp.svg", class:"item item1" %>
           <% end %>
-        <%= link_to rides_path, id:"notif-parent-booking" do %>
-          <%= image_tag "nav-icon/today_black_24dp.svg", class:"item item1" %>
-          <div style="right: 34%; top: 8%;" class="notif <%= current_user.notif_booking ? 'notif-active' : ''%>" ></div>
+        
+          <%= link_to rides_path, id:"notif-parent-booking" do %>
+            <%= image_tag "nav-icon/today_black_24dp.svg", class:"item item1" %>
+            <div style="right: 34%; top: 8%;" class="notif <%= current_user.notif_booking ? 'notif-active' : ''%>" ></div>
           <% end %>
-        <%= link_to edit_user_registration_path do %>
-          <%= image_tag "nav-icon/account_circle_black_24dp.svg", class:"item item1" %>
-        <% end %>
+        
+          <%= link_to edit_user_registration_path do %>
+            <%= image_tag "nav-icon/account_circle_black_24dp.svg", class:"item item1" %>
+          <% end %>
+        
       </div>
       <% else %>
           <%= link_to "Connexion", new_user_session_path, class: "nav-link btn btn-flat background-accent-color" %>
-
       <% end %>
+
           <div class="wave wave1"></div>
           <div class="wave wave2"></div>
           <div class="wave wave3"></div>
         <div class="calm-water"></div>
     </div>
 </div>
+
+
+<%= javascript_pack_tag 'transition' %>

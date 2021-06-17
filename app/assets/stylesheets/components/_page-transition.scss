@@ -1,0 +1,55 @@
+.page-transition-parent {
+    top: 5%;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+}
+.anim {
+    animation: 1s page-transition;
+}
+.no-dis {
+    display: none;
+}
+
+.page-transition {
+    height: 100px;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-white-wave {
+    position: absolute;
+    bottom: 99px;
+    width: 100%;
+    min-height: 75px;
+    background-image: url("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623333616/wave_f650b5.png");
+}
+.white-wave {
+    min-height: 85vh;
+    width: 100%;
+    background-color: white;
+}
+
+@keyframes page-transition
+{
+  0%
+  {
+      opacity: 1;
+      
+      top: 700px;
+  }
+  70%
+  {
+      opacity: 0.5;
+  }
+
+  100%
+  {
+      top: 0;
+  }
+}
