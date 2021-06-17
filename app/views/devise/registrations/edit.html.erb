@@ -51,14 +51,14 @@
                   hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
 
-                  input_html: { autocomplete: "nouvelle-age" } %> 
+                  input_html: { autocomplete: "nouvelle-age" } %>
 
       <%= f.input :bio,
                   hint: "laissez-le vide si vous ne voulez pas le changer",
                   required: false,
 
-                  input_html: { autocomplete: "nouvelle-bio" } %>                  
-                 
+                  input_html: { autocomplete: "nouvelle-bio" } %>
+
 
 
       <%= f.input :password,
@@ -82,10 +82,12 @@
 
     </div>
   <% end %>
-<div class="notre-container btn-container">
-  <%= link_to "Supprimer", registration_path(resource_name), class:"btn btn-flat background-secondary-color" , data: { confirm: "Are you sure?" }, method: :delete %>
+  <div class="notre-container btn-container">
+    <%= link_to "Supprimer", registration_path(resource_name), class:"btn btn-flat background-secondary-color" , data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
 
-  <%= link_to "Deconnexion" , destroy_user_session_path, method: :delete, class:"btn btn-flat background-secondary-color"  %>
-</div>
+  <div class="notre-container btn-container">
+    <%= link_to "Deconnexion" , destroy_user_session_path, method: :delete, class:"btn btn-flat background-secondary-color"  %>
+  </div>
 
 </div>

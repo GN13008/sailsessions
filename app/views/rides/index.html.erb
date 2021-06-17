@@ -4,15 +4,15 @@
 <% content_for :meta_image, image_path(DEFAULT_META["meta_image"]) %>
 <%# top btn onglet %>
 <div class="top-onglet-btn">
-    <button class="onglet-btn" data-anim="1"><h2>Réservation en attente</h2></button>
-    <button class="onglet-btn btn-active" data-anim="2"><h2>Sessions a venir</h2></button>
+    <button class="onglet-btn" data-anim="1"><h2>Réservations en attente</h2></button>
+    <button class="onglet-btn btn-active" data-anim="2"><h2>Sessions à venir</h2></button>
 </div>
 <%# les 2 content %>
 <%# les futur resa %>
 <div class="page-content">
     <div class="onglet" data-anim="1">
         <div class="container">
-            <h1 class="margin-top">Tes reservations en attente !</h1>
+            <h1 class="margin-top">Tes réservations en attente !</h1>
             <%# Les réservations que tu dois accepter ou refuser %>
             <% if @resa_en_att != 0 %>
                 <% @myrides.each do |ride| %>
@@ -56,7 +56,7 @@
             <% else %>
                 <div class="card-mes-session booking">
                     <div class="top-card-mes-session">
-                        <h3 class="titre-margin-top">Pas de réservation en attente</h3>
+                        <h3 class="titre-margin-top">Pas de réservations en attente</h3>
                     </div>
                     <div class="bar-white"></div>
                     <div class="card-middle">
@@ -68,7 +68,7 @@
     </div>
     <div class="onglet" data-anim="2" id="active">
         <div class="container">
-            <h1 class="margin-top">Tes reservations !</h1>
+            <h1 class="margin-top">Tu proposes:</h1>
             <%# les resa a venir %>
             <% if @resa_acceptee != 0 %>
                 <% @myrides.each do |ride| %>
@@ -107,15 +107,17 @@
             <% else %>
                 <div class="card-mes-session booking">
                     <div class="top-card-mes-session">
-                        <h3 class="titre-margin-top">Pas de sessions prévues</h3>
+                        <h3 class="titre-margin-top"><%= current_user.name %> lance toi !</h3>
                     </div>
                     <div class="bar-white"></div>
-                    <div class="card-middle">
+                    <p>Deviens animateur de la communauté SailSessions en proposant des événements aux autres membres.</p>
+                    <div class="card-middle pt-2">
                         <h3><a class="btn btn-flat background-accent-color" href="/rides/new">Créer une session</a></h3>
                     </div>
                 </div>
             <% end %>
-            <h1>Tes Sessions à venir ! </h1>
+            <hr>
+            <h1>Tu rejoins:</h1>
             <% if @mybookings.count == 0 || @mybookings.nil? %>
                 <div class="card-mes-session booking">
                     <div class="top-card-mes-session">
@@ -161,7 +163,7 @@
                                     <%= link_to "Discuter", chatroom_path(booking.ride.chatroom), class: 'btn btn-flat background-accent-color' %>
                                 </div>
                         <% else %>
-                            <p>En attente de la validation de <%= booking.ride.user.name %></p>
+                            <p>Un peu de patience, <%= booking.ride.user.name %> te donnera sa réponse dans un instant!</p>
                         <% end %>
                     </div>
                 <% end %>

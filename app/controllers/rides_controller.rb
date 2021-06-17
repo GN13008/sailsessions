@@ -16,7 +16,7 @@ class RidesController < ApplicationController
       @resa_acceptee += ride.bookings.where(status: "acceptée").count
     end
 
-    
+
   end
 
   def search
@@ -39,7 +39,7 @@ class RidesController < ApplicationController
     @rides_count = @rides.count
     @rides.each do |ride|
       if  ride.user == current_user
-        @rides_count -= 1 
+        @rides_count -= 1
       end
     end
 
