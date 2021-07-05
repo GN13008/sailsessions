@@ -33,16 +33,16 @@
   <hr>
   <div class="search-form-control form-group form-inline center-search">
     <%= form_with url: "/search", method: :get, local: true, :remote => true  do |form| %>
-     <!-- Dropdown -->
+    <!-- Dropdown -->
     <%= form.select :sport, Sport.all.map {|sport| sport.name},
     {
       selected: "",
       prompt: 'Choisis ton sport',
     },
     {class: "form-control little-margin-bottom"} %>
-    <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control little-margin-bottom", id:"from-input"%>
-    <%= form.date_field :date, placeholder: "Quand ?", class: "form-control little-margin-bottom" %>
-    <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color" %></h3>
+    <%= form.text_field :from, placeholder: "Tu pars d'ou ?", class: "form-control w-100 little-margin-bottom", id:"from-input"%>
+    <%= form.date_field :date, placeholder: "Quand ?", class: "form-control w-100 little-margin-bottom" %>
+    <h3><%= form.submit "Trouver une session", class: "btn btn-flat-search background-accent-color w-100" %></h3>
     <% end %>
   </div>
 </div>
