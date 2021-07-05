@@ -9,7 +9,7 @@
 </a>
 
 <!-- Page Main Container -->
-<div class="conainer">
+<div class="container">
   <div class="container-edit-profile">
     <div class="avatar-edit-profile">
       <% if @user.photo.attached? %>
@@ -29,16 +29,16 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-  </div>
    <hr>
+  </div>
    <!-- User Information  -->
    <div class="container">
     <h2>Qui est <%= @user.name %> ?</h2>
     <p><%= @user.bio %></p>
     <hr>
      <h3> <%= @user.name%> a réalisé : <%=@user.rides.count %> Sessions</h3>
-   </div>
    <hr>
+   </div>
 
    <!-- Reviews Section -->
   <div class="container">
@@ -75,10 +75,10 @@
       </div>
         <p class="padding-text">Une session au top et un partage d'expérience enrichissant !</p>
     </div>
-  </div>
     <!-- Laisser un commentaire -->
-  <div>
-    <h4><a class="btn btn-flat background-accent-color margin-top big-btn" href="#">Ajouter un commentaire</a></h4>
+    <div>
+      <h4><a class="btn btn-flat background-accent-color margin-top big-btn" href="#">Ajouter un commentaire</a></h4>
+    </div>
   </div>
 </div>
 

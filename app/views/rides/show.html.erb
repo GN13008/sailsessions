@@ -55,16 +55,18 @@
 
  <!-- Fin Card Contact Component -->
       </div>
-    </div>
   <hr>
+    </div>
 
 <%# map %>
+<div class="container">
   <div id="map"
         style="width: 100%; height: 200px"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <hr>
+</div>
 <div class="container">
       <!-- Description de la session -->
   <div class="container">
