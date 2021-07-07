@@ -1,4 +1,6 @@
 class RidesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :search ]
+
   def index
     #les réservations que je fait
     @mybookings = current_user.bookings
