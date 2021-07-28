@@ -13,42 +13,52 @@ User.destroy_all
 puts "-------- Seeding in process --------"
 
 puts "Creating 11 sports"
-surf = Sport.create!(name: "Surf", description: "Le surf serait apparu sur l'archipel d'Hawaï en Polynésie au xve siècle (15ème).Il représentait un élément symbolique des îles. Selon la légende, les meilleurs surfeurs étaient nommés rois.", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335105/surf_hqehba.jpg")
-sup = Sport.create!(name: "Stand up paddle", description: "Le stand up paddle (ou sup) est un sport qui consiste à ramer debout sur une grande planche. La planche est large, style surf, et on avance avec une pagaie.", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335140/sup_z0elub.jpg")
-wind = Sport.create!(name: "Windsurf", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335139/wind_zul21x.jpg")
-kite = Sport.create!(name: "Kitesurf", description: "Le Kitesurf est un sport nautique de traction, aussi appelé Kite. Il consiste à glisser sur une planche appelée Twintip tout en étant tracté par un cerf-volant.", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335140/kite_q0dcc5.jpg")
-wake = Sport.create!(name: "Wakeboard", description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623335116/wake_qqsr4x.jpg")
-motomarine = Sport.create!(name: "Jet ski", description: "Un jet ski, aussi nommée scooter des mers ou véhicule nautique à moteur (VNM, selon la terminologie ministérielle en France), est un petit véhicule de loisir nautique que l'on chevauche et qui est propulsé par un hydrojet, lui-même actionné par un moteur à combustion.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/motoski_tw7jn9.jpg")
-flyboard = Sport.create!(name:"Flyboard", description: "Le Flyboard est un type de jetpack nautique raccordé à un Jet ski qui lui fournit de l'eau sous pression.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/520px-Flyboard_Lesson_-_Merritt_Island_FL_gd21nn.jpg")
-skimboard = Sport.create!(name:"Skimboard", description: "Le skimboard ou la planche de plage est un sport de glisse qui consiste à surfer sur une vague en se lançant de la plage. Le nom vient du verbe anglais to skim (écumer, écrémer, frôler) et de board (planche), comme dans surfboard (planche de surf), un skimboard est donc littéralement une « planche à frôler/écumer » car elle plane au ras de l'eau.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/skimboard_p7q0dn.jpg")
-aviron = Sport.create!(name:"Aviron", description: "L'aviron est un sport olympique depuis la création des Jeux olympiques modernes en 1896 sous l'impulsion du baron Pierre de Coubertin. Ce sport consiste à propulser une forme, étroite et allongée, de traînière à l'aide de rames, également appelées avirons", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/aviron_ck0zic.jpg")
-bateau_dragon = Sport.create!(name:"Bateau-dragon", description: "Le bateau-dragon est un sport nautique d’équipe qui utilise un type de pirogue appelé aussi bateau-dragon. Les bateaux-dragons de classe internationale qui sont plus petits que les modèles traditionnels pour des raisons de coûts de transports, embarquent 22 personnes dont 20 pagayeurs.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/560px-Dragon_boat_-_Cantonese_e8o5wq.jpg")
-canoe = Sport.create!(name:"Canoë-kayak", description: "Le canoë-kayak est une activité physique de loisir ou sportive, pratiquée avec des embarcations propulsées à la pagaie ou la main, notamment le canoë, le kayak, le raft, ou la pirogue. Cette activité est également désignée par « sports de pagaie ».", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/440px-Canoe-kayak-marathon_hfksip.jpg")
+surf = Sport.create!(name: "Surf", 
+                    description: "Le surf serait apparu sur l'archipel d'Hawaï en Polynésie au xve siècle (15ème).Il représentait un élément symbolique des îles. Selon la légende, les meilleurs surfeurs étaient nommés rois.", 
+                    image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627460872/Sessions/Sports/wp5555815_yjce8l.jpg")
+sup = Sport.create!(name: "Stand up paddle", 
+                    description: "Le stand up paddle (ou sup) est un sport qui consiste à ramer debout sur une grande planche. La planche est large, style surf, et on avance avec une pagaie.", 
+                    image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627460871/Sessions/Sports/download_vrmjis.jpg")
+wind = Sport.create!(name: "Windsurf", 
+                    description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", 
+                    image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627460871/Sessions/Sports/thumb-350-925627_wpxlfb.jpg")
+kite = Sport.create!(name: "Kitesurf", 
+                    description: "Le Kitesurf est un sport nautique de traction, aussi appelé Kite. Il consiste à glisser sur une planche appelée Twintip tout en étant tracté par un cerf-volant.", 
+                    image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627460871/Sessions/Sports/kite_nqaxhi.jpg")
+wake = Sport.create!(name: "Wakeboard", 
+                    description: "Pour une session réussie, réserve ton spot à l'avance, n'oublie pas ta bonne humeur et l'objet d'échange de la session. Pense a préciser la taille de ta planche pour assurer le transport :)", 
+                    image_url:"https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627460871/Sessions/Sports/wakeboarding-wakeboard-sports-wallpaper-preview_twqzjf.jpg")
+# motomarine = Sport.create!(name: "Jet ski", description: "Un jet ski, aussi nommée scooter des mers ou véhicule nautique à moteur (VNM, selon la terminologie ministérielle en France), est un petit véhicule de loisir nautique que l'on chevauche et qui est propulsé par un hydrojet, lui-même actionné par un moteur à combustion.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/motoski_tw7jn9.jpg")
+# flyboard = Sport.create!(name:"Flyboard", description: "Le Flyboard est un type de jetpack nautique raccordé à un Jet ski qui lui fournit de l'eau sous pression.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/520px-Flyboard_Lesson_-_Merritt_Island_FL_gd21nn.jpg")
+# skimboard = Sport.create!(name:"Skimboard", description: "Le skimboard ou la planche de plage est un sport de glisse qui consiste à surfer sur une vague en se lançant de la plage. Le nom vient du verbe anglais to skim (écumer, écrémer, frôler) et de board (planche), comme dans surfboard (planche de surf), un skimboard est donc littéralement une « planche à frôler/écumer » car elle plane au ras de l'eau.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/skimboard_p7q0dn.jpg")
+# aviron = Sport.create!(name:"Aviron", description: "L'aviron est un sport olympique depuis la création des Jeux olympiques modernes en 1896 sous l'impulsion du baron Pierre de Coubertin. Ce sport consiste à propulser une forme, étroite et allongée, de traînière à l'aide de rames, également appelées avirons", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/aviron_ck0zic.jpg")
+# bateau_dragon = Sport.create!(name:"Bateau-dragon", description: "Le bateau-dragon est un sport nautique d’équipe qui utilise un type de pirogue appelé aussi bateau-dragon. Les bateaux-dragons de classe internationale qui sont plus petits que les modèles traditionnels pour des raisons de coûts de transports, embarquent 22 personnes dont 20 pagayeurs.", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/560px-Dragon_boat_-_Cantonese_e8o5wq.jpg")
+# canoe = Sport.create!(name:"Canoë-kayak", description: "Le canoë-kayak est une activité physique de loisir ou sportive, pratiquée avec des embarcations propulsées à la pagaie ou la main, notamment le canoë, le kayak, le raft, ou la pirogue. Cette activité est également désignée par « sports de pagaie ».", image_url: "https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623656113/samples/Sport%20Nautiqiues/440px-Canoe-kayak-marathon_hfksip.jpg")
 
 puts "Sports creation finished"
 puts "Creating 6 users"
 
 gui = User.create!(email: "gui@gmail.com", password: "password", bio: "Bonjour, je m'appelle Guillaume passionné de kitesurf, je recherche une communauté pour partager ma passion et faire de nouvelles rencontres" , name: "Guillaume Negro", age: "27ans")
-guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623760973/profile_qautnw.jpg")
-gui.photo.attach(io: guiimage, filename: 'v1623760973/profile_qautnw.jpg')
+guiimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627461386/Sessions/Users/IMG_3897_lt0gdc.jpg")
+gui.photo.attach(io: guiimage, filename: 'v1627461386/Sessions/Users/IMG_3897_lt0gdc.jpg')
 
 ibra = User.create!(email: "ibra@gmail.com", password: "password", bio: "Salut moi c'est Ibrahim j'adore rencontrer de nouvelles personnes, je suis un grand fan de paddle cela me permet de voir des paysages extraordinaires alors pourquoi pas le faire à plusieurs" , name: "Ibrahim", age: "25ans")
-ibraimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg")
-ibra.photo.attach(io: ibraimage, filename: 'v1622810359/1fqi4b3snnhqeb44jisl9rdtyhgi.jpg')
+ibraimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627461258/Sessions/Users/Ibrahim-2_htplgq.jpg")
+ibra.photo.attach(io: ibraimage, filename: 'v1627461258/Sessions/Users/Ibrahim-2_htplgq.jpg')
 
 flo = User.create!(email: "flo@gmail.com", password: "password" , bio: "Bonjour, je me présente Florent, professionnel de windsurf j'aimerais rencontrer d'autres passionnés qui ont un bon niveau pour faire des grosses sessions et partager mon savoir-faire" , name: "Florent", age: "32ans")
 
 pierre = User.create!(email: "pierre@gmail.com", password: "password", bio: "Bonjour moi c'est Pierre, je pratique le surf depuis 5 ans environ. Je surf tout le temps en solitaire et j'en ai un peu marre du coup je suis ici pour faire pleins de rencontres afin de partager un bon moment et bien sûr surfer la vague" , name: "Pierre", age: "24ans")
-pierreimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg")
-pierre.photo.attach(io: pierreimage, filename: 'v1623672680/5s351z6q1xad16lch5z60lbchiog.jpg')
+pierreimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627461387/Sessions/Users/Montage_vignette.00_00_56_13.Image_fixe008_exbmdw.png")
+pierre.photo.attach(io: pierreimage, filename: 'v1627461387/Sessions/Users/Montage_vignette.00_00_56_13.Image_fixe008_exbmdw.png')
 
 thomas = User.create!(email: "thomas@gmail.com", password: "password", bio: "Bonjour, Thomas au clavier! Je suis débutant en surf et j’aimerais rencontrer une communauté pour partager diverses expériences" , name: "Thomas", age: "35ans")
-thomasimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg")
-thomas.photo.attach(io: thomasimage, filename: 'v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg')
+# thomasimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg")
+# thomas.photo.attach(io: thomasimage, filename: 'v1623748074/T02NE0241-U01U54RMWNB-25d748d280ba-512_hhnzwe.jpg')
 
 paul = User.create!(email: "paul@gmail.com", password: "password", bio: "Bonjour moi c'est Paul je pratique le kitesurf et j’aimerais trouver une communauté pour partager de bons moments" , name: "Paul", age: "28ans")
-paulimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1623748340/T02NE0241-UP3G6NUJY-67d30e168b0a-512_kd72af.jpg")
-paul.photo.attach(io: paulimage, filename: 'v1623748340/T02NE0241-UP3G6NUJY-67d30e168b0a-512_kd72af.jpg')
+paulimage = URI.open("https://res.cloudinary.com/dqc8dpu1n/image/upload/v1627461447/Sessions/Users/Capture_d_%C3%A9cran_2021-07-28_103711_t0lxxk.png")
+paul.photo.attach(io: paulimage, filename: 'v1627461447/Sessions/Users/Capture_d_%C3%A9cran_2021-07-28_103711_t0lxxk.png')
 
 
 puts "Users are created"
@@ -159,7 +169,6 @@ ride15.sport = sup
 ride15.save
 Chatroom.create(name: ride15.title, ride_id: ride15.id)
 puts "#{ride15.title} is created"
-
 
 
 puts "Sessions are created"
