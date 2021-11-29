@@ -62,11 +62,13 @@ class RidesController < ApplicationController
 
   def new
     @ride = Ride.new
+    authorize @ride
   end
 
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
+    authorize @ride
     chatroom = Chatroom.new
     chatroom.name = @ride.title
     chatroom.ride = @ride
