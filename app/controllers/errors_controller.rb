@@ -1,3 +1,3 @@
-# class ErrorsController < ApplicationController
+class ErrorsController < ApplicationController
   
-# end
+end
