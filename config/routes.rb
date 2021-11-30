@@ -27,4 +27,11 @@ Rails.application.routes.draw do
 
   # testing contact form
   resources :contacts, only: [:new, :create]
+
+  # API
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :rides, only: [ :show ]
+    end
+  end
 end

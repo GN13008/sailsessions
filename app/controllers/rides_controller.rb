@@ -11,6 +11,7 @@ class RidesController < ApplicationController
 
     #les sessions que j'ai crées
     @myrides = current_user.rides
+    authorize @myrides
     @resa_en_att = 0
     @resa_acceptee = 0
     @myrides.each do |ride|
@@ -23,6 +24,8 @@ class RidesController < ApplicationController
 
   def search
     @rides = Ride.all
+    authorize @rides
+    # @rides = policy_scope(Ride)
     @sport = params[:sport]
     @description = "Choisis une session, accède aux meilleurs spots et profites un max !"
     @from = params[:from]
@@ -49,6 +52,7 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
+    authorize @ride
     # for mapbox
     @booking = Booking.new()
     @markers =
@@ -62,11 +66,13 @@ class RidesController < ApplicationController
 
   def new
     @ride = Ride.new
+    authorize @ride
   end
 
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
+    authorize @ride
     chatroom = Chatroom.new
     chatroom.name = @ride.title
     chatroom.ride = @ride

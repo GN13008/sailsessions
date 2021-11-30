@@ -72,3 +72,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # testing mailer
 gem 'mail_form'
+
+gem 'pundit'
