@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   # Pundit: white-list approach.
   # check if user is ok to to the action
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
+
+  # Skip this to test a lot of thing, ugly code sorry Sails Session V2 will be awesome
   # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   # # Uncomment when you *really understand* Pundit!
@@ -32,6 +34,7 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+    # This app is just a test, I skip chatroom, booking and mesage pundit and work only on Ride Model
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^chatrooms$)|(^bookings$)|(^messages$)/
   end
 end
