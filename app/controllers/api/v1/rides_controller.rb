@@ -1,4 +1,8 @@
 class Api::V1::RidesController < Api::V1::BaseController
+  def index
+    @rides = policy_scope(Ride)
+  end
+  
   def show
     @ride = Ride.find(params[:id])
     authorize @ride

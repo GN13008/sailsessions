@@ -7,9 +7,7 @@ class ApplicationController < ActionController::Base
   # Pundit: white-list approach.
   # check if user is ok to to the action
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
-
-  # Skip this to test a lot of thing, ugly code sorry Sails Session V2 will be awesome
-  # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   # # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
